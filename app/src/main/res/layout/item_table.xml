@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#eff1f0">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#44a78d"
+
+            />
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/txtsub1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="تاريخ"
+            android:textStyle="bold"
+            android:textColor="#04664c"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#44a78d"
+            />
+
+        <!--<TextView-->
+        <!--android:id="@+id/amount"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="#bde6db"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="20dip"-->
+        <!--android:text="@string/elmada"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="20dp"/>-->
+
+    </LinearLayout>
+    <!-- Row 2 with 3 columns -->
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:id="@+id/residual"
+            android:layout_weight="1"
+            android:background="#bde6db"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="@string/down_degree"
+            android:textColor="#04664c"
+            android:textSize="20dp"
+            />
+
+        <!--<TextView-->
+        <!--android:layout_width="2dp"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:background="#1ac798" />-->
+
+
+        <TextView
+            android:id="@+id/paid"
+            android:layout_weight="1"
+            android:background="#bde6db"
+            android:gravity="center"
+            android:padding="20dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/up_degree"
+            android:textColor="#04664c"
+            android:textSize="20dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:id="@+id/txtmin1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="20"
+            android:textColor="#13af86"
+            android:textSize="20dp"
+            android:textStyle="italic"
+
+            />
+
+        <TextView
+            android:id="@+id/txtmax1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="30"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#13af86"
+            android:textSize="20dp"
+            android:textStyle="italic"/>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tabRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:id="@+id/redual"
+            android:layout_weight="1"
+            android:background="#bde6db"
+            android:gravity="center"
+            android:padding="20dip"
+
+            android:text="@string/month"
+            android:textColor="#04664c"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:id="@+id/resi"
+            android:layout_weight="1"
+            android:background="#bde6db"
+            android:gravity="center"
+            android:padding="20dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Exam"
+            android:textColor="#04664c"
+            android:textSize="20dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tabeRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:id="@+id/txtmon1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="llll"
+            android:textColor="#13af86"
+            android:textSize="20dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/txtexam1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="اختبارات  علمي"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#13af86"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            />
+
+
+
+    </TableRow>
+
+</LinearLayout>

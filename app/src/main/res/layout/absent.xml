@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="#88b9efe2">
+
+    <TextView
+        android:id="@+id/sudname"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="عبد الله محمد احمد"
+        android:gravity="center"
+        android:textColor="#13af86"
+        android:textSize="20dp"/>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="#1ac798" />
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/absdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26/4/2019"
+        android:textSize="18dp"
+        android:textColor="#09946f"/>
+
+        <View
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="#1ac798" />
+
+    <TextView
+        android:id="@+id/attstatue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="غائب"
+        android:textColor="#13af86"
+        android:textSize="18dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="#1ac798" />
+
+
+
+</LinearLayout>

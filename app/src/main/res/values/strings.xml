@@ -1,0 +1,83 @@
+<resources>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="title_activity_web_viiew">WebViiew</string>
+
+    <string name="facebook">facebook</string>
+    <string name="youtube">youtube</string>
+    <string name="snapchat">snapchat</string>
+    <string name="call">Call</string>
+    <string name="help">Help</string>
+    <string name="bottomsheet">BottomSheet Sample</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+        <string name="app_name">Anwar Alfy7a2</string>
+        <string name="action_settings">Settings</string>
+
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="title_activity_ghyaab">ghyaab</string>
+        <string name="title_activity_home">Home</string>
+        <string name="title_activity_maps">Map</string>
+        <string name="email">Email Id</string>
+        <string name="passowrd">Password</string>
+        <string name="login">LOGIN</string>
+        <string name="show_pwd">Show Password</string>
+        <string name="hide_pwd">Hide Password</string>
+        <string name="forgot">Forgot password?</string>
+        <string name="closebutton">Close Button for Activity</string>
+        <string name="newUser">Not a Member yet? Sign Up here.</string>
+        <string name="fullName">Full Name</string>
+        <string name="mobileNumber">Mobile Number</string>
+        <string name="location">Location</string>
+        <string name="confirmPassword">Confirm Password</string>
+        <string name="terms_conditions">By clicking Sign Up you agree all the Terms and Conditions.</string>
+        <string name="signUp">SIGN UP</string>
+        <string name="already_user">Already have Account? Login here.</string>
+        <string name="registered_emailid">Please enter your Registered Email Id below :</string>
+        <string name="submit">SUBMIT</string>
+        <string name="back">BACK</string>
+        <string name="item_1">Sports</string>
+        <string name="item_2">Cultural</string>
+        <string name="item_3">Entertainment</string>
+        <string name="item_4">social</string>
+        <string name="student_name">Student Name </string>
+        <string name="tirm">stage</string>
+        <string name="cclass">Class</string>
+        <string name="gheyab_data">Date absence</string>
+        <string name="Farida">Farida Hussein</string>
+        <string name="elmada">Subject</string>
+        <string name="month">Month</string>
+        <string name="up_degree">Up Degree</string>
+        <string name="down_degree">Down Degree</string>
+        <string name="time">Time</string>
+        <string name="sunday">Sunday</string>
+        <string name="monday">Monday</string>
+        <string name="tuesday">Tuesday</string>
+        <string name="wednesday">Wednesday</string>
+        <string name="amount">Amount</string>
+        <string name="residual">Residual</string>
+        <string name="paid">Paid</string>
+        <string name="activity_ghyaab">Absence students</string>
+        <string name="activity_rsoom">School expenses</string>
+        <string name="activity_anshta">Student Activities</string>
+        <string name="activity_works">Homeworks</string>
+        <string name="gdwal">table class</string>
+        <string name="sharf">Honorary board</string>
+        <string name="mustwa">students level</string>
+        <string name="news">School News</string>
+        <string name="out">Log Out</string>
+        <string name="Thursday">Thursday</string>
+        <string name="Dowen_degree">Dowen Degree</string>
+        <string name="num1">2000</string>
+        <string name="num2">1000</string>
+        <string name="tirm2">tirm2</string>
+        <string name="tirm1">tirm1</string>
+        <string name="no_internet">Internet not available, Cross check your internet connectivity and try again</string>
+
+    </resources>
+
+
+

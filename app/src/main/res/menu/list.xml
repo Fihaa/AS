@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:All4One="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_overflow"
+        android:icon="@drawable/link"
+        All4One:showAsAction="always"
+        android:title="men">
+        <menu>
+
+            <!-- Refresh -->
+            <item
+                android:id="@+id/facebook"
+                android:icon="@drawable/facebook"
+                android:title="FaceBook"
+                />
+
+            <!-- Help -->
+            <item
+                android:id="@+id/snapchat"
+                android:icon="@drawable/snapchat"
+                android:title="SnapChat"
+                />
+
+            <!-- Check updates -->
+            <item
+                android:id="@+id/youtube"
+                android:icon="@drawable/youtube"
+                android:title="YouTube"
+                />
+            <item
+                android:id="@+id/call"
+                android:icon="@drawable/call1"
+                android:title="call"
+                />
+
+            <!-- Check updates -->
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/call"
+                android:title="help"
+                />
+        </menu>
+    </item>
+</menu>
