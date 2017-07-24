@@ -52,7 +52,7 @@ Button out;
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.remove("idName"); // will delete key key_name3
+              //  editor.remove("idName"); // will delete key key_name3
 
                 Intent i =new Intent(Home.this,Login.class);
                 startActivity(i);
@@ -95,7 +95,7 @@ Button out;
                 progressDialog.dismiss();
                 break;
             case R.id.arrive:
-                Intent i3 =new Intent(Home.this,Arcmenu.class);
+                Intent i3 =new Intent(Home.this,MapsActivity.class);
                 startActivity(i3);
                 progressDialog.dismiss();
 

@@ -1,16 +1,12 @@
 package com.example.elashry.aseer.dataProccess;
 
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 public class KeyTags {
 
     public static final String titleKey = "new_title";
     public static final String descKey = "news_details";
     public static final String imgKey = "new_image";
-    @SerializedName("news_date_add")
-    @Expose
     public static final String dateKey = "news_date_add";
 
     public static final String titKey = "timetable_title";
@@ -27,9 +23,11 @@ public class KeyTags {
 
     public static final String imgwork="homework_image";
     public static final String wid="homework_id_pk";
+    public static final String fid="student_id_fk";
 
     public static final String sudname="student_name";
 
+    public static final String f_id="student_id_fk";
     public static final String attstatue="attend_statue";
     public static final String absentdate="absence_date";
 
@@ -46,4 +44,14 @@ public class KeyTags {
     public static final String sharaf_name = "student_name";
     public static final String sharaf_img = "student_photo";
     public static final String sharaf_rank="student_rank";
+
+    public static final String school_name = "school_name";
+    public static final String school_adress = "school_adress";
+    public static final String school_email="school_email";
+    public static final String school_fax = "school_fax";
+    public static final String school_phone = "school_phone";
+    public static final String school_type="school_type";
+    public static final String school_latitude = "school_latitude";
+    public static final String school_longitude = "school_longitude";
+
 }

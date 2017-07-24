@@ -18,11 +18,23 @@ public class DataEncap {
     private String mon;
     private String max;
     private String min;
+    private String efid;
     private String imgwork;
     private String wid;
     private String sudname;
     private String attstatue;
     private String absentdate;
+    private String fid;
+
+    public  String school_name ;
+    public  String school_adress ;
+    public  String school_email;
+    public  String school_fax ;
+    public  String school_phone ;
+    public  String school_type;
+    public  String school_latitude ;
+    public  String school_longitude ;
+
 
 
     public DataEncap() {
@@ -50,12 +62,61 @@ public class DataEncap {
 
     }
 
+    public DataEncap(String school_name, String school_adress, String school_email, String school_fax, String school_phone, String school_type, String school_latitude, String school_longitude) {
+        this.school_name = school_name;
+        this.school_adress = school_adress;
+        this.school_email = school_email;
+        this.school_fax = school_fax;
+        this.school_phone = school_phone;
+        this.school_type = school_type;
+        this.school_latitude = school_latitude;
+        this.school_longitude = school_longitude;
+    }
+
+    public String getSchool_name() {
+        return school_name;
+    }
+
+    public String getSchool_adress() {
+        return school_adress;
+    }
+
+    public String getSchool_email() {
+        return school_email;
+    }
+
+    public String getSchool_fax() {
+        return school_fax;
+    }
+
+    public String getSchool_phone() {
+        return school_phone;
+    }
+
+    public String getSchool_type() {
+        return school_type;
+    }
+
+    public String getSchool_latitude() {
+        return school_latitude;
+    }
+
+    public String getSchool_longitude() {
+        return school_longitude;
+    }
+
     public DataEncap(String imgtable, String titletable) {
         this.imgtable = imgtable;
         this.titletable = titletable;
     }
 
+    public String getEfid() {
+        return efid;
+    }
 
+    public String getFid() {
+        return fid;
+    }
 //    public DataEncap(String imgwork, String wid) {
 //        this.imgwork = imgwork;
 //        this.wid = wid;

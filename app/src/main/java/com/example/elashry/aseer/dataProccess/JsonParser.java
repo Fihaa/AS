@@ -97,11 +97,36 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+                if (s.equals(mainObjectArray.getString(KeyTags.fid))){
 
                 DataEncap enca = new DataEncap(
                         mainObjectArray.getString(KeyTags.sname),mainObjectArray.getString(KeyTags.exame), mainObjectArray.getString(KeyTags.subject),mainObjectArray.getString(KeyTags.month), mainObjectArray.getString(KeyTags.max),mainObjectArray.getString(KeyTags.min));
                 data.add(enca);
-            }
+            }}
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    public ArrayList<DataEncap> JsonProcessschool(String jsonFile) {
+
+        data = new ArrayList<>();
+
+        try {
+
+            JSONArray jsonArray = new JSONArray(jsonFile);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+                if (s.equals(mainObjectArray.getString(KeyTags.fid))){
+
+                    DataEncap enca = new DataEncap(
+                            mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
+                    data.add(enca);
+                }}
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -172,11 +197,12 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+                if (s.equals(mainObjectArray.getString(KeyTags.f_id))){
 
                 DataEncap enca = new DataEncap(
                         mainObjectArray.getString(KeyTags.sudname),mainObjectArray.getString(KeyTags.attstatue),mainObjectArray.getString(KeyTags.absentdate));
                 data.add(enca);
-            }
+            }}
 
         } catch (JSONException e) {
             e.printStackTrace();

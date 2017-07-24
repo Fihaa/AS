@@ -60,4 +60,19 @@
     <string name="num2">1000</string>
     <string name="tirm1">الصف الاول</string>
     <string name="tirm2">الصف الثاني</string>
+    <string name="home1">واجهة البرنامج للدخول لكل مايخص الطالب واحده رسوم مدرسيه وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
+    <string name="intro1">الواجهة الاولي للمستخدم</string>
+
+    <string name="home2">رسوم المدرسه تظهر للول يالامر فقط من مصاريف الترم الاول والثاني والاشتراك في الحافله</string>
+    <string name="intro2">الرسوم المدرسيه</string>
+
+    <string name="home3">واجهة البرنامج للدخول لكل مايخص الطالب واحده رسوم مدرسيه وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
+    <string name="intro3">الوصول للمدرسه</string>
+
+    <string name="home4">جدول الحصص الاسبوعي لكل طالب ويمكن عمل تكبير للصوره لتتضح اكثر </string>
+    <string name="intro4">جدول الحصص</string>
+
+    <string name="home5">مستوي الطالب لطل ماده تفاصيل في اي شهر ادي الطالب الامتحان ودرجة الطالب  </string>
+    <string name="intro5">مستوي الطالب</string>
+    <string name="app_intro_skip">تخطي</string>
 </resources>

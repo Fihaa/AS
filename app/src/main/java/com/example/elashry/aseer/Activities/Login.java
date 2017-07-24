@@ -48,6 +48,8 @@ public class Login extends AppCompatActivity {
 //    JsonParser parser = new JsonParser();
 EditText edt1,edtn , edtpass;
     public static String sid;
+    public static String school;
+
     View view;
     ProgressDialog progressDialog;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
@@ -110,6 +112,7 @@ EditText edt1,edtn , edtpass;
                                             object = response.getJSONObject(index);
 
                                             sid=object.get("student_id_pk").toString();
+                                            school=object.get("school_id_fk").toString();
                                             if (id.toString().equals(object.get("student_national_id").toString()))
                                             {
                                                 list.add(object);
@@ -178,11 +181,38 @@ EditText edt1,edtn , edtpass;
                                         {
                                          //   Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                           //  Toast.makeText(Login.this,object.get("student_national_id").toString() , Toast.LENGTH_SHORT).show();
+                                            sid=object.get("student_id_fk").toString();
 
-                                            Intent ii=new Intent(Login.this,Home.class);
-                                            ii.putExtra("id",object.get("student_id_pk").toString());
+                                            final JsonArrayRequest mrequest = new JsonArrayRequest(student_url,
+
+                                                    new Response.Listener<JSONArray>() {
+                                                        @Override
+                                                        public void onResponse(JSONArray response) {
+                                                            try {
+                                                                JSONObject object = new JSONObject();
+                                                                for (int index = 0; index < response.length(); index++) {
+                                                                    object = response.getJSONObject(index);
+
+                                                                    if (sid.equals(object.get("student_id_pk").toString())){
+                                                                        Intent ii=new Intent(Login.this,Home.class);
+                                                                        ii.putExtra("name",object.get("student_name").toString());
+                                                                        ii.putExtra("id",object.get("student_id_pk").toString());
 //                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
-                                            startActivity(ii);
+                                                                        startActivity(ii);
+                                                                        Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                }
+                                                            } catch (JSONException e) {
+                                                                e.printStackTrace();
+                                                            }
+                                                        }
+                                                    }, new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+
+                                                }
+                                            });
+                                            MyApp.getInstance().addToRequestQueue(mrequest, "jsonarray req");
                                         }
                                         else
 

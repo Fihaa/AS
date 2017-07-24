@@ -23,7 +23,7 @@
         <uses-library android:name="com.google.android.maps" />
 
         <activity
-            android:name=".Activities.Splach"
+            android:name=".Activities.School"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,6 +35,7 @@
         <activity
             android:name=".Activities.ghyaab"
             android:label="@string/activity_ghyaab" />
+        <activity android:name=".Activities.MyIntro" />
         <activity
             android:name=".Activities.News"
             android:label="@string/news" />
@@ -89,7 +90,7 @@
             android:label="@string/title_activity_web_viiew"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.Notify" />
-
+        <activity android:name=".Activities.Splach"></activity>
     </application>
 
 </manifest>
