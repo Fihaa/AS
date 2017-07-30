@@ -64,7 +64,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="المبلغ"
+            android:text="@string/amount"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -102,7 +102,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="المدفوع"
+            android:text="@string/paid"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -128,7 +128,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:text="الترم الاول"
+            android:text="@string/tirm1"
             android:textColor="#2f9f81"
             android:textSize="25dp" />
 
@@ -175,7 +175,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="مبلغ "
+            android:text="@string/amount"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -214,7 +214,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="المدفوع"
+            android:text="@string/paid"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -241,7 +241,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:text="الترم الثاني"
+            android:text="@string/tirm2"
             android:textColor="#2f9f81"
             android:textSize="25dp" />
 
@@ -289,7 +289,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="مبلغ"
+            android:text="@string/amount"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -327,7 +327,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="المدفوع"
+            android:text="@string/paid"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -353,7 +353,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:text="اشتراك الحافله"
+            android:text="@string/bus"
             android:textColor="#2f9f81"
             android:textSize="25dp" />
 
@@ -400,7 +400,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="الترم الاول"
+            android:text="@string/tirm1"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -438,7 +438,7 @@
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="الترم الثاني"
+            android:text="@string/tirm2"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />

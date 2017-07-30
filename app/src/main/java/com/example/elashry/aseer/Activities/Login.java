@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,6 +34,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static com.example.elashry.aseer.Activities.Select.y;
 
@@ -41,6 +43,7 @@ public class Login extends AppCompatActivity {
     private final String student_url ="http://wefakhail.org/fihaa/api/students";
     private final String user_url ="http://wefakhail.org/fihaa/api/users";
     private final String parents_url ="http://wefakhail.org/fihaa/api/parents";
+    final static String api = "http://wefakhail.org/fihaa/api/schools";
 
     private Effectstype effect;
     Button b1;
@@ -49,6 +52,8 @@ public class Login extends AppCompatActivity {
 EditText edt1,edtn , edtpass;
     public static String sid;
     public static String school;
+    public static String namesc,phonesc,emailsc;
+    public static double latitudesc,longitudesc;
 
     View view;
     ProgressDialog progressDialog;
@@ -84,8 +89,7 @@ EditText edt1,edtn , edtpass;
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onClick(final View view) {
 
                 final String id = edtn.getText().toString();
                 final String email = edt1.getText().toString();
@@ -113,6 +117,7 @@ EditText edt1,edtn , edtpass;
 
                                             sid=object.get("student_id_pk").toString();
                                             school=object.get("school_id_fk").toString();
+
                                             if (id.toString().equals(object.get("student_national_id").toString()))
                                             {
                                                 list.add(object);
@@ -127,13 +132,16 @@ EditText edt1,edtn , edtpass;
                                         {
 
                                             // MY_PREFS_NAME - a static String variable like:
-                                            editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                                            editor.putString("idName", "1149159053");
-                                            editor.apply();
+
                                             Intent i=new Intent(Login.this,Home.class);
                                             i.putExtra("id",object.get("student_id_pk").toString());
                                             i.putExtra("name",object.get("student_name").toString());
-                                        //    Toast.makeText(Login.this,object.get("student_id_pk").toString() , Toast.LENGTH_SHORT).show();
+//                                            Toast.makeText(Login.this, phonesc, Toast.LENGTH_SHORT).show();
+                                            showProgress(view);
+                                            editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                                            editor.putString("idName", "1149159053");
+                                            editor.apply();
+                                            //    Toast.makeText(Login.this,object.get("student_id_pk").toString() , Toast.LENGTH_SHORT).show();
                                             startActivity(i);
                                         }
                                         else
@@ -194,12 +202,15 @@ EditText edt1,edtn , edtpass;
                                                                     object = response.getJSONObject(index);
 
                                                                     if (sid.equals(object.get("student_id_pk").toString())){
+                                                                        school=object.get("school_id_fk").toString();
+
                                                                         Intent ii=new Intent(Login.this,Home.class);
                                                                         ii.putExtra("name",object.get("student_name").toString());
                                                                         ii.putExtra("id",object.get("student_id_pk").toString());
 //                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
+                                                                        showProgress(view);
                                                                         startActivity(ii);
-                                                                        Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
+//                                                                        Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                                                     }
                                                                 }
                                                             } catch (JSONException e) {
@@ -247,7 +258,7 @@ EditText edt1,edtn , edtpass;
 //                                            String pa= convertPassMd5(pass.toString());
 //                                            Toast.makeText(Login.this,pa,Toast.LENGTH_LONG).show();
 
-                                            if (email.toString().equals(object.get("user_email").toString())&&object.get("user_pass").toString().equals(pass))
+                                            if (email.toString().equals(object.get("user_username").toString())&&object.get("user_pass").toString().equals(pass))
                                             {
                                                 list.add(object);
 //                                                pDialog.setMessage("جارى تسجيل الدخول ...");
@@ -260,8 +271,10 @@ EditText edt1,edtn , edtpass;
                                         }
                                         if (list.size()>0)
                                         {
-                                            Intent i=new Intent(Login.this,Home.class);                                                y="1";
+                                            Intent i=new Intent(Login.this,Home.class);
+                                            y="1";
                                             i.putExtra("y", y);
+                                            showProgress(view);
 
                                             startActivity(i);
                                         }
@@ -309,6 +322,7 @@ EditText edt1,edtn , edtpass;
 
 
     }
+
     public boolean isOnline() {
         ConnectivityManager conMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
@@ -343,10 +357,53 @@ EditText edt1,edtn , edtpass;
     }
 
 
+
 //    @Override
 //    public boolean onSupportNavigateUp(){
 //        finish();
 //        return true;
 //    }
+
+    public  void showProgress(View view) {
+        final int THREE_SECONDS = 2*1000;
+        final ProgressDialog dlg = new ProgressDialog(this);
+
+        if (Locale.getDefault().getLanguage().equals("en")){
+            dlg.setMessage("Looding ...");
+
+        }else{
+
+            dlg.setMessage("جارى التحميل ...");
+
+        }        dlg.setCancelable(true);
+        dlg.setProgress(0);
+        dlg.show();
+
+//        final int totalProgressTime = 100;
+//        final Thread t = new Thread() {
+//            @Override
+//            public void run() {
+//                int jumpTime = 0;
+//
+//                while(jumpTime < totalProgressTime) {
+//                    try {
+//                        sleep(200);
+//                        jumpTime += 5;
+//                        dlg.setProgress(jumpTime);
+//                    } catch (InterruptedException e) {
+//                        // TODO Auto-generated catch block
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        };
+//        t.start();
+
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                dlg.dismiss();
+            }
+        }, THREE_SECONDS);
+    }
 }
 

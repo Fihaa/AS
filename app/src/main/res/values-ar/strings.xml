@@ -28,7 +28,7 @@
     <string name="activity_works">الواجبات المدرسيه</string>
     <string name="already_user">هل لديك حساب بالفعل؟ تسجيل الدخول هنا.</string>
     <string name="terms_conditions">بالنقر على الاشتراك، فإنك توافق على جميع البنود والشروط.</string>
-    <string name="up_degree">الدرجة العظمي</string>
+    <string name="up_degree"> المستوى</string>
     <string name="submit">ارسال</string>
     <string name="signUp">سجل</string>
     <string name="sharf">لوحة الشرف</string>
@@ -42,14 +42,15 @@
     <string name="login">تسجيل الدخول</string>
     <string name="hide_pwd">اخفاء كلمة المرور</string>
     <string name="hello_blank_fragment">مرحبا جزء فارغ</string>
-    <string name="email">عنوان الايميل</string>
+    <string name="email">ادخل رقم الهويه</string>
     <string name="forgot">هل نسيت كلمة المرور؟</string>
     <string name="fullName">الاسم بالكامل</string>
     <string name="down_degree">الدرجة الصغري</string>
     <string name="confirmPassword">"تأكيد كلمة المرور "</string>
     <string name="closebutton">زر إغلاق للنشاط</string>
     <string name="back">رجوع</string>
-    <string name="amount">مبلغ</string>
+    <string name="internet">جارى التحميل ..</string>
+    <string name="amount">المبلغ</string>
     <string name="title_activity_maps">الخريطة</string>
     <string name="title_activity_home">الصفحة الرئيسيه</string>
     <string name="out">تسجيل الخروج</string>
@@ -60,19 +61,33 @@
     <string name="num2">1000</string>
     <string name="tirm1">الصف الاول</string>
     <string name="tirm2">الصف الثاني</string>
-    <string name="home1">واجهة البرنامج للدخول لكل مايخص الطالب واحده رسوم مدرسيه وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
+    <string name="home1">واجهة البرنامج للدخول لكل مايخص الطالب  رسوم مدرسيه و اخبار وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
     <string name="intro1">الواجهة الاولي للمستخدم</string>
 
-    <string name="home2">رسوم المدرسه تظهر للول يالامر فقط من مصاريف الترم الاول والثاني والاشتراك في الحافله</string>
+    <string name="home2">رسوم المدرسه تظهر لولى الامر من مصاريف الترم الاول والثاني والاشتراك في الحافله</string>
     <string name="intro2">الرسوم المدرسيه</string>
 
-    <string name="home3">واجهة البرنامج للدخول لكل مايخص الطالب واحده رسوم مدرسيه وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
+    <string name="home3">واجهة البرنامج للدخول لكل مايخص الطالب  رسوم مدرسيه و اخبار وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
     <string name="intro3">الوصول للمدرسه</string>
 
-    <string name="home4">جدول الحصص الاسبوعي لكل طالب ويمكن عمل تكبير للصوره لتتضح اكثر </string>
+    <string name="home4">جدول الحصص الاسبوعي لكل طالب ويمكن عمل تكبير وتصغير للصوره لتتضح اكثر </string>
     <string name="intro4">جدول الحصص</string>
 
-    <string name="home5">مستوي الطالب لطل ماده تفاصيل في اي شهر ادي الطالب الامتحان ودرجة الطالب  </string>
+    <string name="home5">مستوي الطالب فى ماده وتفاصيل كل شهر الامتحان ودرجة الطالب الصغرى والعظمى  </string>
     <string name="intro5">مستوي الطالب</string>
     <string name="app_intro_skip">تخطي</string>
+    <string name="facebook">فيس بوك</string>
+    <string name="help">طلب مساعده</string>
+    <string name="call">اتصال</string>
+    <string name="bottomsheet"></string>
+    <string name="no_internet">لايوجد انترنت</string>
+    <string name="snapchat">سناب شات</string>
+    <string name="title_activity_main2"></string>
+    <string name="title_activity_web_viiew"></string>
+    <string name="youtube">يوتيوب</string>
+    <string name="bus">اشتراك الحافله</string>
+    <string name="allamunt">اجمالي الرسوم</string>
+    <string name="buss">رسوم الموصلات</string>
+    <string name="rsomtirm1">رسوم الصف الاول</string>
+    <string name="rsomtirm2">رسوم الصف الثاني</string>
 </resources>

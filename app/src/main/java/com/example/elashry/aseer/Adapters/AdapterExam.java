@@ -58,8 +58,7 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder> im
         holder.exame.setText(encap.getExam());
         holder.sub.setText(encap.getSub());
         holder.mon.setText(encap.getMon());
-        holder.max.setText(encap.getMax());
-        holder.min.setText(encap.getMin());
+        holder.exam_degree.setText(encap.getExam_degree());
     }
 
     @Override
@@ -77,8 +76,7 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder> im
         TextView exame;
         TextView sub;
         TextView mon;
-        TextView max;
-        TextView min;
+        TextView exam_degree;
         TextView name;
 
 
@@ -88,8 +86,7 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder> im
             exame = (TextView) layout.findViewById(R.id.txtexam1);
             sub = (TextView) layout.findViewById(R.id.txtsub1);
             mon= (TextView) layout.findViewById(R.id.txtmon1);
-            max = (TextView) layout.findViewById(R.id.txtmax1);
-            min = (TextView) layout.findViewById(R.id.txtmin1);
+            exam_degree = (TextView) layout.findViewById(R.id.txtmax1);
             name = (TextView) layout.findViewById(R.id.txtname);
 
         }

@@ -1,7 +1,10 @@
 package com.example.elashry.aseer.Activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import com.example.elashry.aseer.R;
@@ -29,34 +32,25 @@ public class MyIntro extends AppIntro {
         // Turn vibration on and set intensity
         // You will need to add VIBRATE permission in Manifest file
         setVibrate(true);
-        setVibrateIntensity(30);
+        setVibrateIntensity(50);
 
         //Add animation to the intro slider
         setDepthAnimation();
     }
 
+
     @Override
-    public void onSkipPressed() {
-        // Do something here when users click or tap on Skip button.
-        Toast.makeText(getApplicationContext(),
-                getString(R.string.app_intro_skip), Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+    public void onDonePressed(Fragment currentFragment) {
+
+        Intent i = new Intent(getApplicationContext(), Select.class);
         startActivity(i);
     }
 
     @Override
-    public void onNextPressed() {
-        // Do something here when users click or tap on Next button.
+    public void onSkipPressed(Fragment currentFragment) {
+        Toast.makeText(getApplicationContext(),
+                getString(R.string.app_intro_skip), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onDonePressed() {
-        // Do something here when users click or tap tap on Done button.
-        finish();
-    }
 
-    @Override
-    public void onSlideChanged() {
-        // Do something here when slide is changed
-    }
 }

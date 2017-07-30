@@ -18,8 +18,7 @@ public class KeyTags {
     public static final String exame = "exam_title";
     public static final String subject = "subject_title";
     public static final String month = "exam_month";
-    public static final String max="exam_max_degree";
-    public static final String min="exam_min_degree";
+    public static final String exam_degree="exam_degree";
 
     public static final String imgwork="homework_image";
     public static final String wid="homework_id_pk";
@@ -53,5 +52,21 @@ public class KeyTags {
     public static final String school_type="school_type";
     public static final String school_latitude = "school_latitude";
     public static final String school_longitude = "school_longitude";
+
+    public static final String school_id="school_id";
+
+    public static final String event_imgs = "event_images";
+    public static final String event_title="event_title";
+    public static final String event_date="event_date";
+    public static final String school_id_fk="school_id_fk";
+
+    public static final String payset_amount = "payset_amount";
+    public static final String payset_transport = "payset_transport";
+    public static final String payset_stuff_kids="payset_stuff_kids";
+    public static final String payset_student_brother = "payset_student_brother";
+    public static final String payset_full_pay = "payset_full_pay";
+    public static final String pay_set_year="pay_set_year";
+    public static final String payset_hijri_year = "payset_hijri_year";
+    public static final String school_fk="school_id_fk";
 
 }

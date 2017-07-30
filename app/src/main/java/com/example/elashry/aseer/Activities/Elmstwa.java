@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.elashry.aseer.Adapters.AdapterExam;
 import com.example.elashry.aseer.Adapters.AdapterNews;
@@ -16,9 +17,14 @@ import com.example.elashry.aseer.dataProccess.DataEncap;
 import com.example.elashry.aseer.dataProccess.JsonParser;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.elashry.aseer.Activities.Home.n;
+import static com.example.elashry.aseer.dataProccess.DataEncap.attstatue;
+import static com.example.elashry.aseer.dataProccess.DataEncap.exam_degree;
+import static com.example.elashry.aseer.dataProccess.JsonParser.exame;
+import static com.example.elashry.aseer.dataProccess.JsonParser.state;
 
 public class Elmstwa extends AppCompatActivity {
     final static String api = "http://wefakhail.org/fihaa/api/exams";
@@ -40,13 +46,30 @@ public class Elmstwa extends AppCompatActivity {
         try {
 
             ArrayList<DataEncap> arrayList = parser.JsonProcessexams(connector.execute(api).get());
+           // Toast.makeText(this, exame, Toast.LENGTH_SHORT).show();
+
+//        if (exame.equals("")){
+//            Toast.makeText(this, "mmmmmmmmmmmmmm", Toast.LENGTH_SHORT).show();
+//        }else {
+//            Toast.makeText(this, exame, Toast.LENGTH_SHORT).show();}
             recyclerMain();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+      //  if (exam_degree.equals("")){
+         //   if (Locale.getDefault().getLanguage().equals("en")) {
+          //      Toast.makeText(this, "no degree", Toast.LENGTH_SHORT).show();
 
+          //  } else {
+            //    Toast.makeText(this, "لم يقيم بعد  ", Toast.LENGTH_SHORT).show();
+
+
+          //  }
+       // }else {
+
+     //   }
     }
     private void recyclerMain() {
 

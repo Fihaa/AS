@@ -16,13 +16,12 @@ public class DataEncap {
     private String exam;
     private String sub;
     private String mon;
-    private String max;
-    private String min;
+    public static String exam_degree;
     private String efid;
     private String imgwork;
     private String wid;
     private String sudname;
-    private String attstatue;
+    public static String attstatue;
     private String absentdate;
     private String fid;
 
@@ -44,13 +43,12 @@ public class DataEncap {
         this.id = id;
     }
 
-    public DataEncap(String name, String exam, String sub, String mon, String max, String min) {
+    public DataEncap(String name, String exam, String sub, String mon, String exam_degree) {
         this.name = name;
         this.exam = exam;
         this.sub = sub;
         this.mon = mon;
-        this.max = max;
-        this.min = min;
+        this.exam_degree = exam_degree;
     }
 
     public DataEncap(String img, String title, String date, String desc) {
@@ -71,6 +69,10 @@ public class DataEncap {
         this.school_type = school_type;
         this.school_latitude = school_latitude;
         this.school_longitude = school_longitude;
+    }
+
+    public String getExam_degree() {
+        return exam_degree;
     }
 
     public String getSchool_name() {
@@ -199,13 +201,7 @@ public class DataEncap {
         return mon;
     }
 
-    public String getMax() {
-        return max;
-    }
 
-    public String getMin() {
-        return min;
-    }
 
     public String getImgwork() {
         imgwork = "http://wefakhail.org/fihaa/uploads/thumbs/" + imgwork;

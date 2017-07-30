@@ -5,17 +5,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.elashry.aseer.Adapters.AdapterSchool;
 import com.example.elashry.aseer.R;
+import com.example.elashry.aseer.dataProccess.Connector;
+import com.example.elashry.aseer.dataProccess.DataEncap;
+import com.example.elashry.aseer.dataProccess.JsonParser;
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 import com.szugyi.circlemenu.view.CircleImageView;
 import com.szugyi.circlemenu.view.CircleLayout;
+
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 import static com.example.elashry.aseer.Activities.Login.editor;
 import static com.example.elashry.aseer.Activities.Select.x;
@@ -26,24 +38,35 @@ public class Home extends AppCompatActivity implements CircleLayout.OnItemClickL
     private Effectstype effect;
     ProgressDialog progressDialog;
     public static  String s ,n;
-
+    final static String api = "http://wefakhail.org/fihaa/api/schools";
+    JsonParser parser = new JsonParser();
+    private RecyclerView recyclerView;
+    private AdapterSchool adapter;
     //private float angle = 90;
 
 Button out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        if (Locale.getDefault().getLanguage().equals("en")) {
+            setContentView(R.layout.econtent_home);
+
+        } else {
+            setContentView(R.layout.activity_home);
+
+
+        }
         circleLayout = (CircleLayout) findViewById(R.id.circle);
         circleLayout.setOnItemClickListener(this);
-        Intent i=getIntent();
-        s=  i.getStringExtra("id");
-        n=  i.getStringExtra("name");
+        Intent i = getIntent();
+        s = i.getStringExtra("id");
+        n = i.getStringExtra("name");
 
-        Intent ii=getIntent();
-        s=  ii.getStringExtra("id");
-        n=  ii.getStringExtra("name");
-        progressDialog=new ProgressDialog(this);
+
+        Intent ii = getIntent();
+        s = ii.getStringExtra("id");
+        n = ii.getStringExtra("name");
+        progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
 
@@ -52,18 +75,54 @@ Button out;
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  editor.remove("idName"); // will delete key key_name3
+                //  editor.remove("idName"); // will delete key key_name3
 
-                Intent i =new Intent(Home.this,Login.class);
-                startActivity(i);
-
-
+                finish();
 
 
             }
         });
 
+     //   if (y.equals("2")|y.equals("3")) {
 
+
+            //  Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+
+      /*  Connector connector = new Connector();
+
+        try {
+
+            ArrayList<DataEncap> arrayList = parser.JsonProcessschool(connector.execute(api).get());
+          //  Toast.makeText(this,arrayList.toString(), Toast.LENGTH_SHORT).show();
+
+            recyclerMain();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
+    else {}}
+    private void recyclerMain() {
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+    adapter = new AdapterSchool(parser.getlist(), getApplicationContext(), this);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        adapter.notifyDataSetChanged();
+
+
+    }*/
+        }
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
     @Override
@@ -76,8 +135,7 @@ Button out;
 //        }
     //   Toast.makeText(this, "select "+name, Toast.LENGTH_SHORT).show();
 
-        progressDialog.setMessage("جارى التحميل ...");
-        progressDialog.show();
+
         if (isOnline()){
 
             if (x==false ){
@@ -86,56 +144,73 @@ Button out;
 
             case R.id.activity:
                 Intent i1 =new Intent(Home.this,Anshta.class);
+                showProgress(view);
                 startActivity(i1);
-                progressDialog.dismiss();
                 break;
             case R.id.apsent:
-                Intent i2 =new Intent(Home.this,ghyaab.class);
-                startActivity(i2);
-                progressDialog.dismiss();
+                if (y.equals("2")|y.equals("3")) {
+
+                    Intent i2 = new Intent(Home.this, ghyaab.class);
+                    showProgress(view);
+                    startActivity(i2);
+                }else {}
                 break;
             case R.id.arrive:
                 Intent i3 =new Intent(Home.this,MapsActivity.class);
+                showProgress(view);
+
                 startActivity(i3);
-                progressDialog.dismiss();
 
                 break;
             case R.id.rsoom:
                 if(y.equals("2")|y.equals("3")){
                     Intent ii =new Intent(Home.this,Rsoom.class);
+                    showProgress(view);
+
                     startActivity(ii);
-                    progressDialog.dismiss();
                 }else {
+                    if (y.equals("1")){
                     Intent i4 =new Intent(Home.this,WebViiew.class);
-                    startActivity(i4);
-                    progressDialog.dismiss();
+                    showProgress(view);
+
+                    startActivity(i4);}
                 }
 
                 break;
             case R.id.sharf:
                 Intent i5 =new Intent(Home.this,Sharf.class);
+                showProgress(view);
+
                 startActivity(i5);
-                progressDialog.dismiss();
                 break;
             case R.id.state:
-                Intent i6 =new Intent(Home.this,Elmstwa.class);
-                startActivity(i6);
-                progressDialog.dismiss();
+                if (y.equals("2")|y.equals("3")) {
+                    Intent i6 = new Intent(Home.this, Elmstwa.class);
+                    showProgress(view);
+
+                    startActivity(i6);
+                }else {}
                 break;
             case R.id.table:
                 Intent i7 =new Intent(Home.this,Table.class);
+                showProgress(view);
+
                 startActivity(i7);
-                progressDialog.dismiss();
                 break;
             case R.id.news:
                 Intent i8 =new Intent(Home.this,News.class);
+                showProgress(view);
+
                 startActivity(i8);
-                progressDialog.dismiss();
                 break;
             case R.id.homework:
-                Intent i9 =new Intent(Home.this,Works.class);
-                startActivity(i9);
-                progressDialog.dismiss();
+                if (y.equals("2")|y.equals("3")) {
+
+                    Intent i9 = new Intent(Home.this, Works.class);
+                    showProgress(view);
+
+                    startActivity(i9);
+                }else {}
                 break;
         }
       }else if (x==true){
@@ -143,24 +218,29 @@ Button out;
 
                     case R.id.activity:
                         Intent i1 =new Intent(Home.this,Anshta.class);
+                        showProgress(view);
+
                         startActivity(i1);
-                        progressDialog.dismiss();
                         break;
                     case R.id.news:
                         Intent i2 =new Intent(Home.this,News.class);
+                        showProgress(view);
+
                         startActivity(i2);
-                        progressDialog.dismiss();
                         break;
                     case R.id.sharf:
                         Intent i3 =new Intent(Home.this,Sharf.class);
+                        showProgress(view);
+
                         startActivity(i3);
-                        progressDialog.dismiss();
 
                         break;
                     case R.id.arrive:
-                        Intent i4 =new Intent(Home.this,MapsActivity.class);
-                        startActivity(i4);
                         progressDialog.dismiss();
+                        Intent i4 =new Intent(Home.this,MapsActivity.class);
+                        showProgress(view);
+
+                        startActivity(i4);
 
                         break;
                     case R.id.table:
@@ -172,7 +252,9 @@ Button out;
                     case R.id.rsoom:
                         break;
             }
-    }}else {
+    }                x=false;
+
+        }else {
             NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(Home.this);
 
             effect=Effectstype.Flipv;
@@ -225,5 +307,48 @@ Button out;
             return false;
         }
         return true;
+    }
+
+    public  void showProgress(View view) {
+        final int THREE_SECONDS = 2*1000;
+        final ProgressDialog dlg = new ProgressDialog(this);
+
+        if (Locale.getDefault().getLanguage().equals("en")){
+            dlg.setMessage("Looding ...");
+
+        }else{
+
+            dlg.setMessage("جارى التحميل ...");
+
+        }
+        dlg.setCancelable(true);
+        dlg.setProgress(0);
+        dlg.show();
+
+//        final int totalProgressTime = 100;
+//        final Thread t = new Thread() {
+//            @Override
+//            public void run() {
+//                int jumpTime = 0;
+//
+//                while(jumpTime < totalProgressTime) {
+//                    try {
+//                        sleep(200);
+//                        jumpTime += 5;
+//                        dlg.setProgress(jumpTime);
+//                    } catch (InterruptedException e) {
+//                        // TODO Auto-generated catch block
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        };
+//        t.start();
+
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                dlg.dismiss();
+            }
+        }, THREE_SECONDS);
     }
 }

@@ -40,6 +40,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import static android.R.attr.action;
+import static com.example.elashry.aseer.Activities.Select.y;
+import static com.example.elashry.aseer.dataProccess.JsonParser.latitudesc;
+import static com.example.elashry.aseer.dataProccess.JsonParser.longitudesc;
+
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -47,9 +51,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     LocationManager locationManager;
     //ImageView contact;
 
-    ImageButton face,youtube,snap,call,help;
+  //  ImageButton face,youtube,snap,call,help;
     com.sa90.materialarcmenu.ArcMenu arcMenuAndroid;
-
+    ImageView face, snap, tube;
+    TextView phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +69,49 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         setTitle(getIntent().getStringExtra("title"));
 
+        face = (ImageView) findViewById(R.id.facebook);
+        snap = (ImageView) findViewById(R.id.snapchat);
+        tube = (ImageView) findViewById(R.id.youtube);
+       // phone = (TextView) findViewById(R.id.phone1);
+
+
+       /* face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com"));
+                startActivity(intent);
+
+            }
+        });
+
+        snap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.snapchat.com"));
+                startActivity(intent);
+
+            }
+        });
+
+        tube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com"));
+                startActivity(intent);
+
+            }
+        });
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+966 14 832 0405"));
+                startActivity(intent);
+
+            }
+        });
+
+*/
         // getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         //   getSupportActionBar().setDisplayShowCustomEnabled(true);
         //  getSupportActionBar().setCustomView(R.layout.custom_actionbar);
@@ -181,13 +229,29 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+       /* if(y.equals("2")|y.equals("3")){
+            LatLng Soudia = new LatLng(latitudesc, longitudesc);
 
-        LatLng Soudia = new LatLng(24.4448177, 39.5363698);
+            mMap.addMarker(new MarkerOptions().position(Soudia).title("Marker in Soudia"));
+            mMap.addPolyline(new PolylineOptions().add(
+
+            ));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Soudia, 18));
+        }else {*/
+            Intent i1 =new Intent(MapsActivity.this,Arcmenu.class);
+            startActivity(i1);
+        LatLng Soudia = new LatLng(27.510612, 41.681779);
+
+      //  Toast.makeText(this, phonesc, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, (int) latitudesc, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, emailsc, Toast.LENGTH_SHORT).show();
+
         mMap.addMarker(new MarkerOptions().position(Soudia).title("Marker in Soudia"));
         mMap.addPolyline(new PolylineOptions().add(
 
         ));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Soudia, 18));
+    //}
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -220,16 +284,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 break;
             case R.id.call:
-                Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+966 14 832 0405"));
-                startActivity(intent2);
+              //  Toast.makeText(this, phonesc, Toast.LENGTH_SHORT).show();
+//                Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse(phonesc));
+//                startActivity(intent2);
                 break;
             case R.id.snapchat:
                 Intent intent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.snapchat.com"));
                 startActivity(intent3);
                 break;
             case R.id.help:
-                Intent intent4 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+966 14 832 0405"));
-                startActivity(intent4);
+               // Toast.makeText(this, emailsc, Toast.LENGTH_SHORT).show();
+
+//                Intent intent4 = new Intent(Intent.ACTION_DIAL, Uri.parse(emailsc));
+//                startActivity(intent4);
                 break;
         }
 

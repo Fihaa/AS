@@ -20,6 +20,81 @@ public class DataModel {
     private String sharaf_name;
     private String sharaf_img;
 
+    private String event_imgs;
+    private String event_title;
+    private String event_date;
+    private String school_id_fk;
+
+    private Double payset_amount;
+    private String payset_transport;
+    private String payset_stuff_kids;
+    private String payset_student_brother;
+    private String payset_full_pay;
+    private String pay_set_year;
+    private String payset_hijri_year;
+
+    public DataModel(String event_imgs, String event_title, String event_date, String school_id_fk) {
+        this.event_imgs = event_imgs;
+        this.event_title = event_title;
+        this.event_date = event_date;
+        this.school_id_fk = school_id_fk;
+    }
+
+    public DataModel(Double payset_amount, String payset_transport, String payset_stuff_kids, String payset_student_brother, String payset_full_pay, String pay_set_year, String payset_hijri_year) {
+        this.payset_amount = payset_amount;
+        this.payset_transport = payset_transport;
+        this.payset_stuff_kids = payset_stuff_kids;
+        this.payset_student_brother = payset_student_brother;
+        this.payset_full_pay = payset_full_pay;
+        this.pay_set_year = pay_set_year;
+        this.payset_hijri_year = payset_hijri_year;
+    }
+
+    public Double getPayset_amount() {
+        return payset_amount;
+    }
+
+    public String getPayset_transport() {
+        return payset_transport;
+    }
+
+    public String getPayset_stuff_kids() {
+        return payset_stuff_kids;
+    }
+
+    public String getPayset_student_brother() {
+        return payset_student_brother;
+    }
+
+    public String getPayset_full_pay() {
+        return payset_full_pay;
+    }
+
+    public String getPay_set_year() {
+        return pay_set_year;
+    }
+
+    public String getPayset_hijri_year() {
+        return payset_hijri_year;
+    }
+
+    public String getEvent_imgs() {
+
+        return event_imgs;
+    }
+
+    public String getEvent_title() {
+        return event_title;
+    }
+
+    public String getEvent_date() {
+        return event_date;
+    }
+
+    public String getSchool_id_fk() {
+        return school_id_fk;
+    }
+
     public DataModel(String sharaf_name, String sharaf_img, String sharaf_rank) {
         this.sharaf_name = sharaf_name;
         this.sharaf_img = sharaf_img;

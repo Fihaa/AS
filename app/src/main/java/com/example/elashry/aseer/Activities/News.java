@@ -32,7 +32,9 @@ public class News extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+
+
         Connector connector = new Connector();
 
         try {

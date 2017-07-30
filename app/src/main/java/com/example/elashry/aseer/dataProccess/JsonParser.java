@@ -3,6 +3,7 @@ package com.example.elashry.aseer.dataProccess;
 import android.widget.Toast;
 
 import com.example.elashry.aseer.Activities.Home;
+import com.example.elashry.aseer.Activities.School;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,13 +12,20 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.example.elashry.aseer.Activities.Home.s;
+import static com.example.elashry.aseer.Activities.Login.school;
+import static com.example.elashry.aseer.Activities.PaySchool.sp;
+import static com.example.elashry.aseer.Activities.Select.y;
 
 
 public class JsonParser {
 
     ArrayList<DataEncap> data;
     ArrayList<DataModel> mdata;
-
+//    public static String namesc,phonesc,emailsc ,faxsc,addressc;
+    public static double latitudesc,longitudesc;
+    public static String state;
+    public static String exame;
+    public static Double amount;
     public ArrayList<DataEncap> JsonProcess(String jsonFile) {
 
         data = new ArrayList<>();
@@ -97,12 +105,13 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
-                if (s.equals(mainObjectArray.getString(KeyTags.fid))){
+                if (s.equals(mainObjectArray.getString(KeyTags.fid))&&(y.equals("2")|y.equals("3"))){
 
                 DataEncap enca = new DataEncap(
-                        mainObjectArray.getString(KeyTags.sname),mainObjectArray.getString(KeyTags.exame), mainObjectArray.getString(KeyTags.subject),mainObjectArray.getString(KeyTags.month), mainObjectArray.getString(KeyTags.max),mainObjectArray.getString(KeyTags.min));
+                        mainObjectArray.getString(KeyTags.sname),mainObjectArray.getString(KeyTags.exame), mainObjectArray.getString(KeyTags.subject),mainObjectArray.getString(KeyTags.month), mainObjectArray.getString(KeyTags.exam_degree));
                 data.add(enca);
-            }}
+            exame=mainObjectArray.getString(KeyTags.exame);
+                }}
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -121,12 +130,28 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
-                if (s.equals(mainObjectArray.getString(KeyTags.fid))){
+        //       if (school.equals(mainObjectArray.getString(KeyTags.school_id))){
 
-                    DataEncap enca = new DataEncap(
+//                   namesc=mainObjectArray.getString(KeyTags.school_name);
+//                   phonesc=mainObjectArray.getString(KeyTags.school_phone);
+//                   emailsc=mainObjectArray.getString(KeyTags.school_email);
+//                   faxsc=mainObjectArray.getString(KeyTags.school_phone);
+//                   addressc=mainObjectArray.getString(KeyTags.school_email);
+//                   latitudesc= Double.parseDouble(mainObjectArray.getString(KeyTags.school_latitude));
+//                   longitudesc= Double.parseDouble(mainObjectArray.getString(KeyTags.school_longitude));
+
+                   DataEncap enca = new DataEncap(
                             mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
                     data.add(enca);
-                }}
+
+
+               // }
+//                namesc=mainObjectArray.getString(KeyTags.school_name);
+//                phonesc=mainObjectArray.getString(KeyTags.school_phone);
+//                emailsc=mainObjectArray.getString(KeyTags.school_email);
+//                faxsc=mainObjectArray.getString(KeyTags.school_phone);
+//                addressc=mainObjectArray.getString(KeyTags.school_email);
+        }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -197,12 +222,17 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
-                if (s.equals(mainObjectArray.getString(KeyTags.f_id))){
+                if (s.equals(mainObjectArray.getString(KeyTags.f_id))&&(y.equals("2")|y.equals("3"))){
 
                 DataEncap enca = new DataEncap(
                         mainObjectArray.getString(KeyTags.sudname),mainObjectArray.getString(KeyTags.attstatue),mainObjectArray.getString(KeyTags.absentdate));
                 data.add(enca);
-            }}
+                    state=mainObjectArray.getString(KeyTags.attstatue);
+
+            }else {
+
+                }
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -230,6 +260,71 @@ public class JsonParser {
             e.printStackTrace();
         }
         return mdata;
+    }
+    public ArrayList<DataModel> JsonProcessEvent(String jsonFile) {
+
+        mdata = new ArrayList<>();
+
+        try {
+
+            JSONArray jsonArray = new JSONArray(jsonFile);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+
+                DataModel enca = new DataModel(
+                        mainObjectArray.getString(KeyTags.event_imgs),mainObjectArray.getString(KeyTags.event_title),mainObjectArray.getString(KeyTags.event_date),mainObjectArray.getString(KeyTags.school_id_fk));
+                mdata.add(enca);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return mdata;
+    }
+    public ArrayList<DataModel> JsonProcessPs(String jsonFile) {
+
+        mdata = new ArrayList<>();
+
+        try {
+
+            JSONArray jsonArray = new JSONArray(jsonFile);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+                if (sp.equals(mainObjectArray.getString(KeyTags.school_fk))){
+
+                DataModel enca = new DataModel(
+                        mainObjectArray.getDouble(KeyTags.payset_amount),mainObjectArray.getString(KeyTags.payset_transport),mainObjectArray.getString(KeyTags.payset_stuff_kids),mainObjectArray.getString(KeyTags.payset_student_brother),mainObjectArray.getString(KeyTags.payset_full_pay),mainObjectArray.getString(KeyTags.pay_set_year),mainObjectArray.getString(KeyTags.payset_hijri_year));
+                mdata.add(enca);
+                    amount=mainObjectArray.getDouble(KeyTags.payset_amount);
+                    amount=mainObjectArray.getDouble(KeyTags.payset_amount);
+
+               }}
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+//        if (sp.equals("14")){
+//          x=   mdata.get(3);
+//        }else if (sp.equals("8")){
+//             x=  mdata.get(1);
+//
+//        }else if (sp.equals("3")){
+//             x=   mdata.get(0);
+//
+//        }else if (sp.equals("9")){
+//             x=   mdata.get(5);
+//
+//        }else if (sp.equals("18")){
+//             x=    mdata.get(8);
+//
+//        }
+        return mdata;
+
     }
 
 

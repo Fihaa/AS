@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.elashry.aseer.Activities.ghyaab;
 import com.example.elashry.aseer.R;
@@ -19,6 +20,7 @@ public class AdapterAbsent extends RecyclerView.Adapter<AdapterAbsent.ViewHolder
     ArrayList<DataEncap> arrayList;
     Context context;
     ghyaab ghyeeb;
+    public static String s;
 
     DataEncap encap = new DataEncap();
 
@@ -48,10 +50,11 @@ public class AdapterAbsent extends RecyclerView.Adapter<AdapterAbsent.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         encap = arrayList.get(position);
 
-
         holder.sudname.setText(encap.getSudname());
         holder.attenstatue.setText(encap.getAttstatue());
         holder.absentdate.setText(encap.getAbsentdate());
+        s=encap.getAttstatue();
+
 
 
 

@@ -14,14 +14,14 @@
     <string name="bottomsheet">BottomSheet Sample</string>
     <string name="title_activity_main2">Main2Activity</string>
 
-    <string name="app_name">Anwar Alfy7a2</string>
+    <string name="app_name">Anwar Alfihaa</string>
     <string name="action_settings">Settings</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_ghyaab">ghyaab</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_maps">Map</string>
-    <string name="email">Email Id</string>
+    <string name="email">Press Your Id</string>
     <string name="passowrd">Password</string>
     <string name="login">LOGIN</string>
     <string name="show_pwd">Show Password</string>
@@ -50,7 +50,7 @@
     <string name="Farida">Farida Hussein</string>
     <string name="elmada">Subject</string>
     <string name="month">Month</string>
-    <string name="up_degree">Up Degree</string>
+    <string name="up_degree">state </string>
     <string name="down_degree">Down Degree</string>
     <string name="time">Time</string>
     <string name="sunday">Sunday</string>
@@ -75,6 +75,7 @@
     <string name="num2">1000</string>
     <string name="tirm2">tirm2</string>
     <string name="tirm1">tirm1</string>
+    <string name="internet">looding ..</string>
     <string name="app_intro_skip">Skip</string>
 
     <string name="home1">"The interface of the program to enter for each student is a single school fees and absence and the schedule of separation and a map to access the school "</string>
@@ -92,6 +93,11 @@
     <string name="intro5">"Student's level "</string>
     <string name="intro3">arrive at school</string>
     <string name="no_internet">Internet not available, Cross check your internet connectivity and try again</string>
+    <string name="bus">Subscribe Bus</string>
+    <string name="allamunt">All Amount</string>
+    <string name="buss">Amount Bus</string>
+    <string name="rsomtirm1">Amount Tirm1</string>
+    <string name="rsomtirm2">Amount Tirm2</string>
 
 </resources>
 

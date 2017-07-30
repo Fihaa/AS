@@ -95,6 +95,7 @@
         android:textColor="#f5fafa"
         android:textStyle="bold"
         android:textSize="35dp"
+        android:text="@string/out"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"/>

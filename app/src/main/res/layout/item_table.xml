@@ -54,16 +54,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp">
 
-        <TextView
-            android:id="@+id/residual"
-            android:layout_weight="1"
-            android:background="#bde6db"
-            android:gravity="center"
-            android:padding="20dip"
-            android:text="@string/down_degree"
-            android:textColor="#04664c"
-            android:textSize="20dp"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/residual"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#bde6db"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="20dip"-->
+            <!--android:text="@string/down_degree"-->
+            <!--android:textColor="#04664c"-->
+            <!--android:textSize="20dp"-->
+            <!--/>-->
 
         <!--<TextView-->
         <!--android:layout_width="2dp"-->
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/paid"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
@@ -91,31 +91,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp">
 
-        <TextView
-            android:id="@+id/txtmin1"
-            android:layout_weight="1"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:padding="20dip"
-            android:text="20"
-            android:textColor="#13af86"
-            android:textSize="20dp"
-            android:textStyle="italic"
 
-            />
 
         <TextView
             android:id="@+id/txtmax1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="#ffffff"
             android:gravity="center"
             android:padding="20dip"
             android:text="30"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:textColor="#13af86"
             android:textSize="20dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
     </TableRow>
 

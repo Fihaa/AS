@@ -9,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.elashry.aseer.Activities.Arcmenu;
 import com.example.elashry.aseer.Activities.Detail;
+import com.example.elashry.aseer.Activities.Home;
 import com.example.elashry.aseer.Activities.News;
 import com.example.elashry.aseer.Activities.School;
 import com.example.elashry.aseer.R;
@@ -25,15 +28,23 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
 
     ArrayList<DataEncap> arrayList;
     Context context;
-    School school;
+    Arcmenu arc;
+    Home school;
+    public static String namesc,phonesc,emailsc ,faxsc,addressc;
 
     DataEncap encap = new DataEncap();
 
-    public AdapterSchool(ArrayList<DataEncap> arrayList, Context context, School school) {
+    public AdapterSchool(ArrayList<DataEncap> arrayList, Context context, Arcmenu arc) {
+        this.arrayList = arrayList;
+        this.context = context;
+        this.arc = arc;
+    }
+    public AdapterSchool(ArrayList<DataEncap> arrayList, Context context, Home school) {
         this.arrayList = arrayList;
         this.context = context;
         this.school = school;
     }
+
 
     @Override
     public AdapterSchool.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -66,13 +77,21 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
         String dateFormat = new SimpleDateFormat("dd /MM/yyyy").format(v2);
         holder.date.setText(dateFormat);
 */
-       holder.t1.setText(encap.school_name);
-        holder.t2.setText(encap.school_adress);
-        holder.t3.setText(encap.school_fax);
-        holder.t4.setText(encap.school_email);
-        holder.t5.setText(encap.school_phone);
-        holder.t6.setText(encap.school_latitude);
-        holder.t7.setText(encap.school_longitude);
+        holder.t1.setText(encap.getSchool_name());
+        holder.t2.setText(encap.getSchool_adress());
+        holder.t3.setText(encap.getSchool_fax());
+        holder.t4.setText(encap.getSchool_email());
+        holder.t5.setText(encap.getSchool_phone());
+        holder.t6.setText(encap.getSchool_latitude());
+        holder.t7.setText(encap.getSchool_longitude());
+
+        namesc=encap.getSchool_name();
+        phonesc=encap.getSchool_phone();
+        addressc=encap.getSchool_adress();
+        faxsc=encap.getSchool_fax();
+        emailsc=encap.getSchool_email();
+
+
 
     }
 

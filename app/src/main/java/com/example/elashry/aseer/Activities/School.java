@@ -15,6 +15,7 @@ import com.example.elashry.aseer.Models.ListRecycle;
 import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.Adapters.RecycleAdapter;
 import com.example.elashry.aseer.dataProccess.Connector;
+import com.example.elashry.aseer.dataProccess.DataEncap;
 import com.example.elashry.aseer.dataProccess.DataModel;
 import com.example.elashry.aseer.dataProccess.JsonParser;
 
@@ -34,35 +35,38 @@ public class School extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-        Connector connector = new Connector();
 
-        try {
-
-            ArrayList<DataModel> arrayList = parser.JsonProcessSharf(connector.execute(api).get());
-            recyclerMain();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-    }
-    private void recyclerMain() {
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        adapter = new AdapterSchool(parser.getlist(), getApplicationContext(), this);
-
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
-        adapter.notifyDataSetChanged();
-
+//        Connector connector = new Connector();
+//
+//        try {
+//
+//            ArrayList<DataEncap> arrayList = parser.JsonProcessschool(connector.execute(api).get());
+//            Toast.makeText(this,arrayList.toString(), Toast.LENGTH_SHORT).show();
+//
+//            recyclerMain();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
 
     }
+//    private void recyclerMain() {
+//
+//        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//        adapter = new AdapterSchool(parser.getlist(), getApplicationContext(), this);
+//
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+//        adapter.notifyDataSetChanged();
+//
+//
+//    }
     @Override
     public boolean onSupportNavigateUp(){
         finish();
