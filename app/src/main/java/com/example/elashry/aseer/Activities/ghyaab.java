@@ -38,22 +38,22 @@ public class ghyaab extends AppCompatActivity {
 
             ArrayList<DataEncap> arrayList = parser.JsonProcessAbsent(connector.execute(api).get());
             //   Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-               Toast.makeText(this, attstatue, Toast.LENGTH_SHORT).show();
+         //      Toast.makeText(this, attstatue, Toast.LENGTH_SHORT).show();
 
-            if (attstatue.equals("")) {
-               // if (Locale.getDefault().getLanguage().equals("en")) {
-                    Toast.makeText(this, "no absent for this student", Toast.LENGTH_SHORT).show();
-
-               // } else {
-                    Toast.makeText(this, "لا يوجد لهذا الطالب غياب", Toast.LENGTH_SHORT).show();
-
-
-               //a }
-            }  else {
+//            if (attstatue.equals("")) {
+//               // if (Locale.getDefault().getLanguage().equals("en")) {
+//                    Toast.makeText(this, "no absent for this student", Toast.LENGTH_SHORT).show();
+//
+//               // } else {
+//                    Toast.makeText(this, "لا يوجد لهذا الطالب غياب", Toast.LENGTH_SHORT).show();
+//
+//
+//               //a }
+//            }  else {
 
                 recyclerMain();
 
-            }
+           // }
             } catch(InterruptedException e){
                 e.printStackTrace();
             } catch(ExecutionException e){
