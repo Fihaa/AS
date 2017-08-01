@@ -97,7 +97,6 @@
             android:name=".Activities.MyIntro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.PaySchool" />
-        <activity android:name=".Activities.PS"></activity>
     </application>
 
 </manifest>

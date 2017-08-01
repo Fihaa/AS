@@ -49,22 +49,9 @@
             android:id="@+id/fab_arc_menu_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/item11"
+            android:src="@drawable/iend1"
             />
 
-        <ImageView
-            android:id="@+id/fab_arc_menu_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/item22"/>
-
-        <ImageView
-            android:id="@+id/fab_arc_menu_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/item33"
-
-            />
 
 
 
@@ -93,14 +80,7 @@
             android:id="@+id/fab_arc_menu_22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/item2"/>
-
-        <ImageView
-            android:id="@+id/fab_arc_menu_33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/item3"
-            />
+            android:src="@drawable/iend2"/>
 
 
 
