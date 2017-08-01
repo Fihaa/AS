@@ -244,7 +244,6 @@ Button out;
 
                         break;
                     case R.id.table:
-
                         break;
                     case R.id.homework:
 
@@ -252,7 +251,7 @@ Button out;
                     case R.id.rsoom:
                         break;
             }
-    }                x=false;
+    }
 
         }else {
             NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(Home.this);

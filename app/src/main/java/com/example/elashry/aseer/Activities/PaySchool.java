@@ -89,7 +89,7 @@ public class PaySchool extends AppCompatActivity {
             address.setText(addressc);
             email.setText(emailsc);
             fax.setText(faxsc);
-        x=false;}
+            x=false;}
         else if (idsc.get(0).equals(scp.get(2))) {
             name.setText(namesc);
             Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
@@ -97,7 +97,7 @@ public class PaySchool extends AppCompatActivity {
             address.setText(addressc);
             email.setText(emailsc);
             fax.setText(faxsc);
-        x=false;}
+            x=false;}
 
         else if (idsc.get(3).equals(scp)) { name.setText(namesc);
             Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
