@@ -44,6 +44,7 @@ public class KeyTags {
     public static final String sharaf_img = "student_photo";
     public static final String sharaf_rank="student_rank";
 
+    public static final String school_id = "school_id";
     public static final String school_name = "school_name";
     public static final String school_adress = "school_adress";
     public static final String school_email="school_email";
@@ -53,7 +54,6 @@ public class KeyTags {
     public static final String school_latitude = "school_latitude";
     public static final String school_longitude = "school_longitude";
 
-    public static final String school_id="school_id";
 
     public static final String event_imgs = "event_images";
     public static final String event_title="event_title";

@@ -37,28 +37,29 @@ public class ghyaab extends AppCompatActivity {
         try {
 
             ArrayList<DataEncap> arrayList = parser.JsonProcessAbsent(connector.execute(api).get());
-         //   Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-         //   Toast.makeText(this, attstatue, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+               Toast.makeText(this, attstatue, Toast.LENGTH_SHORT).show();
+
+            if (attstatue.equals("")) {
+               // if (Locale.getDefault().getLanguage().equals("en")) {
+                    Toast.makeText(this, "no absent for this student", Toast.LENGTH_SHORT).show();
+
+               // } else {
+                    Toast.makeText(this, "لا يوجد لهذا الطالب غياب", Toast.LENGTH_SHORT).show();
 
 
-            recyclerMain();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-//        if (attstatue.equals("")){
-//            if (Locale.getDefault().getLanguage().equals("en")) {
-//                Toast.makeText(this, "no absent for this student", Toast.LENGTH_SHORT).show();
-//
-//            } else {
-//                Toast.makeText(this, "لا يوجد لهذا الطالب غياب", Toast.LENGTH_SHORT).show();
-//
-//
-//            }
-//        }else {
-//
-//   }
+               //a }
+            }  else {
+
+                recyclerMain();
+
+            }
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            } catch(ExecutionException e){
+                e.printStackTrace();
+            }
+
     }
     private void recyclerMain() {
 

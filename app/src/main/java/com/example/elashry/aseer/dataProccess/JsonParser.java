@@ -13,8 +13,10 @@ import java.util.ArrayList;
 
 import static com.example.elashry.aseer.Activities.Home.s;
 import static com.example.elashry.aseer.Activities.Login.school;
-import static com.example.elashry.aseer.Activities.PaySchool.sp;
 import static com.example.elashry.aseer.Activities.Select.y;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.idsc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.scid;
+import static com.example.elashry.aseer.Activities.PaySchool.scp;
 
 
 public class JsonParser {
@@ -122,6 +124,7 @@ public class JsonParser {
     public ArrayList<DataEncap> JsonProcessschool(String jsonFile) {
 
         data = new ArrayList<>();
+        idsc = new ArrayList<>();
 
         try {
 
@@ -130,7 +133,7 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
-        //       if (school.equals(mainObjectArray.getString(KeyTags.school_id))){
+              if (!mainObjectArray.getString(KeyTags.school_id).equals("2")){
 
 //                   namesc=mainObjectArray.getString(KeyTags.school_name);
 //                   phonesc=mainObjectArray.getString(KeyTags.school_phone);
@@ -141,11 +144,12 @@ public class JsonParser {
 //                   longitudesc= Double.parseDouble(mainObjectArray.getString(KeyTags.school_longitude));
 
                    DataEncap enca = new DataEncap(
-                            mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
+                           mainObjectArray.getString(KeyTags.school_id),  mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
                     data.add(enca);
+                      idsc.add(mainObjectArray.getString(KeyTags.school_id));
 
 
-               // }
+           }
 //                namesc=mainObjectArray.getString(KeyTags.school_name);
 //                phonesc=mainObjectArray.getString(KeyTags.school_phone);
 //                emailsc=mainObjectArray.getString(KeyTags.school_email);
@@ -294,7 +298,7 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
-                if (sp.equals(mainObjectArray.getString(KeyTags.school_fk))){
+                if (scp.contains(mainObjectArray.getString(KeyTags.school_fk))){
 
                 DataModel enca = new DataModel(
                         mainObjectArray.getDouble(KeyTags.payset_amount),mainObjectArray.getString(KeyTags.payset_transport),mainObjectArray.getString(KeyTags.payset_stuff_kids),mainObjectArray.getString(KeyTags.payset_student_brother),mainObjectArray.getString(KeyTags.payset_full_pay),mainObjectArray.getString(KeyTags.pay_set_year),mainObjectArray.getString(KeyTags.payset_hijri_year));

@@ -30,7 +30,8 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
     Context context;
     Arcmenu arc;
     Home school;
-    public static String namesc,phonesc,emailsc ,faxsc,addressc;
+   public static ArrayList<String> idsc;
+    public static String namesc,phonesc,emailsc ,faxsc,addressc,scid;
 
     DataEncap encap = new DataEncap();
 
@@ -84,12 +85,15 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
         holder.t5.setText(encap.getSchool_phone());
         holder.t6.setText(encap.getSchool_latitude());
         holder.t7.setText(encap.getSchool_longitude());
+        holder.t8.setText(encap.getSchool_id());
 
         namesc=encap.getSchool_name();
         phonesc=encap.getSchool_phone();
         addressc=encap.getSchool_adress();
         faxsc=encap.getSchool_fax();
         emailsc=encap.getSchool_email();
+        scid= (String) holder.t8.getText();
+
 
 
 
@@ -107,7 +111,7 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView t1,t2,t3,t4 ,t5,t6,t7;
+        TextView t1,t2,t3,t4 ,t5,t6,t7,t8;
 
 
 
@@ -129,6 +133,7 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
             t5= (TextView) layout.findViewById(R.id.t5);
             t6= (TextView) layout.findViewById(R.id.t6);
             t7= (TextView) layout.findViewById(R.id.t7);
+            t8= (TextView) layout.findViewById(R.id.t8);
 
         }
 

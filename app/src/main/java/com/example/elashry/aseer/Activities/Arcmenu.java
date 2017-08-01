@@ -26,6 +26,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Arcmenu extends AppCompatActivity {
 
+  public static   boolean x;
     ImageView item1,item2,item3,item11,item22,item33;
 public static String i1,i2,i3,i11,i22,i33;;
     final static String api = "http://wefakhail.org/fihaa/api/schools";
@@ -57,8 +58,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i1="13";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i1);
+                        i1.putExtra("i1",i1);
                         startActivity(i1);
+                        x=true;
 
                     }
                 });
@@ -68,8 +70,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i2="8";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i2);
+                        i1.putExtra("i2",i2);
                         startActivity(i1);
+                        x=true;
 
                     }
                 });
@@ -79,8 +82,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i3="3";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i3);
+                        i1.putExtra("i3",i3);
                         startActivity(i1);
+                        x=true;
 
                     }
                 });
@@ -90,8 +94,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i11="14";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i11);
+                        i1.putExtra("i4",i11);
                         startActivity(i1);
+                        x=true;
 
                     }
                 });
@@ -101,8 +106,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i22="9";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i22);
+                        i1.putExtra("i5",i22);
                         startActivity(i1);
+                        x=true;
 
                     }
                 });
@@ -112,8 +118,9 @@ public static String i1,i2,i3,i11,i22,i33;;
                     public void onClick(View view) {
                         i33="18";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i",i33);
+                        i1.putExtra("i6",i33);
                         startActivity(i1);
+                        x=true;
                     }
                 });
 

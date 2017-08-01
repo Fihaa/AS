@@ -87,5 +87,17 @@
         android:textColor="#13af86"
         android:textSize="25dp"
         android:textStyle="italic" />
+    <TextView
+        android:id="@+id/t8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="20dip"
+        android:text="2000"
+        android:textColor="#13af86"
+        android:textSize="25dp"
+        android:textStyle="italic" />
 
 </LinearLayout>

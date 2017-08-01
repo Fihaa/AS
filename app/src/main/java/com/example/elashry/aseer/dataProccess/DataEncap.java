@@ -25,6 +25,8 @@ public class DataEncap {
     private String absentdate;
     private String fid;
 
+    public  String school_id ;
+
     public  String school_name ;
     public  String school_adress ;
     public  String school_email;
@@ -60,7 +62,8 @@ public class DataEncap {
 
     }
 
-    public DataEncap(String school_name, String school_adress, String school_email, String school_fax, String school_phone, String school_type, String school_latitude, String school_longitude) {
+    public DataEncap(String school_id,String school_name, String school_adress, String school_email, String school_fax, String school_phone, String school_type, String school_latitude, String school_longitude) {
+        this.school_id = school_id;
         this.school_name = school_name;
         this.school_adress = school_adress;
         this.school_email = school_email;
@@ -69,6 +72,10 @@ public class DataEncap {
         this.school_type = school_type;
         this.school_latitude = school_latitude;
         this.school_longitude = school_longitude;
+    }
+
+    public String getSchool_id() {
+        return school_id;
     }
 
     public String getExam_degree() {
