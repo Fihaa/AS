@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">أنوار الفيحاء</string>
     <string name="item_1">رياضى</string>
     <string name="item_2">ثقافى</string>
@@ -10,7 +11,6 @@
     <string name="tirm">الصف</string>
     <string name="cclass">الفصل</string>
     <string name="gheyab_data">"تاريخ الغياب "</string>
-    <string name="Farida">"فريدة حسين "</string>
     <string name="Dowen_degree">الدرجةالصغري</string>
     <string name="month">الشهر</string>
     <string name="elmada">الماده</string>
@@ -59,8 +59,8 @@
     <string name="mustwa">مستوي الطلاب</string>
     <string name="num1">2000</string>
     <string name="num2">1000</string>
-    <string name="tirm1">الصف الاول</string>
-    <string name="tirm2">الصف الثاني</string>
+    <string name="tirm1">الفصل الدراسي الاول</string>
+    <string name="tirm2">الفصل الدراسي الثاني</string>
     <string name="home1">واجهة البرنامج للدخول لكل مايخص الطالب  رسوم مدرسيه و اخبار وغياب وجدول الفصل وخريطه للوصول للمدرسه</string>
     <string name="intro1">الواجهة الاولي للمستخدم</string>
 
@@ -83,11 +83,12 @@
     <string name="no_internet">لايوجد انترنت</string>
     <string name="snapchat">سناب شات</string>
     <string name="title_activity_main2"></string>
-    <string name="title_activity_web_viiew"></string>
     <string name="youtube">يوتيوب</string>
     <string name="bus">اشتراك الحافله</string>
     <string name="allamunt">اجمالي الرسوم</string>
     <string name="buss">رسوم الموصلات</string>
-    <string name="rsomtirm1">رسوم الصف الاول</string>
-    <string name="rsomtirm2">رسوم الصف الثاني</string>
+    <string name="rsomtirm1">الفصل الدراسي الاول</string>
+    <string name="rsomtirm2">الفصل الدراسي الثاني</string>
+    <string name="activity_payschool"> الوصول للمدرسه</string>
+    <string name="title_activity_web_viiew">الرسوم المدرسية</string>
 </resources>

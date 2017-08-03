@@ -3,14 +3,12 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/recycler_view"
-            android:background="@color/back"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/recycler_view"
+        android:background="@color/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -21,8 +19,8 @@
 
     <TextView
         android:textStyle="normal"
-        android:layout_marginTop="20dp"
         android:id="@+id/title1"
+        android:layout_marginBottom="20dp"
         android:textColor="#009688"
         android:textSize="25dp"
         android:text="Select Your School "
@@ -31,15 +29,13 @@
         android:layout_gravity="center_horizontal"
         />
 
-
-
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout"
-        android:layout_width="120px"
-        android:layout_height="120px"
+        android:layout_width="200px"
+        android:layout_height="200px"
         app:menu_scr="@drawable/girl"
         app:menu_open="arc_right"
-        app:menu_radius="100dp"
+        app:menu_radius="140dp"
         app:menu_color="#f5f9f8"
 
 
@@ -56,12 +52,14 @@
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout2"
-        android:layout_width="120px"
-        android:layout_height="120px"
+        android:layout_width="200px"
+        android:layout_height="200px"
         app:menu_scr="@drawable/boy"
         app:menu_open="arc_right"
-        app:menu_radius="100dp"
+        app:menu_radius="140dp"
         app:menu_color="#f5f9f8"
+
+
         >
 
         <ImageView
@@ -79,8 +77,7 @@
 
 
 
+
     </com.sa90.materialarcmenu.ArcMenu>
-
-
 
 </LinearLayout></FrameLayout>

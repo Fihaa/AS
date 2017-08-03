@@ -13,18 +13,25 @@ import android.widget.ImageView;
 
 import com.example.elashry.aseer.R;
 
+import java.util.Locale;
+
 public class Select extends AppCompatActivity {
     ImageView user,student,parent;
 
     public boolean isFirstStart;
     Context mcontext;
     public static String y;
-    public static boolean x=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.select);
+        if (Locale.getDefault().getLanguage().equals("en")) {
+            setContentView(R.layout.eselect);
 
+        } else {
+            setContentView(R.layout.select);
+
+
+        }
         user= (ImageView) findViewById(R.id.loginuserId);
         student= (ImageView) findViewById(R.id.loginstudent);
         parent= (ImageView) findViewById(R.id.loginparent);
@@ -86,7 +93,6 @@ public class Select extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               x=true;
                 y="4";
                 // Click action
                 Intent intent = new Intent(Select.this, Home.class);

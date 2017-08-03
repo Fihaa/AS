@@ -41,11 +41,9 @@ public static String i1,i2,i3,i11,i22,i33;;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arc_menu);
         item1=(ImageView)findViewById(R.id.fab_arc_menu_1) ;
-        item2=(ImageView)findViewById(R.id.fab_arc_menu_2) ;
-        item3=(ImageView)findViewById(R.id.fab_arc_menu_3) ;
+
         item11=(ImageView)findViewById(R.id.fab_arc_menu_11) ;
         item22=(ImageView)findViewById(R.id.fab_arc_menu_22) ;
-        item33=(ImageView)findViewById(R.id.fab_arc_menu_33) ;
 
         arcMenuAndroid = (com.sa90.materialarcmenu.ArcMenu) findViewById(R.id.arcmenu_android_example_layout);
         arcMenuAndroid.setStateChangeListener(new StateChangeListener() {
@@ -56,45 +54,25 @@ public static String i1,i2,i3,i11,i22,i33;;
                 item1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        i1="13";
+                        i11="3";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i1",i1);
+                        i1.putExtra("i1",i11);
                         startActivity(i1);
                         x=true;
 
                     }
                 });
 
-                item2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        i2="8";
-                        Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i2",i2);
-                        startActivity(i1);
-                        x=true;
 
-                    }
-                });
 
-                item3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        i3="3";
-                        Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i3",i3);
-                        startActivity(i1);
-                        x=true;
 
-                    }
-                });
 
                 item11.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        i11="14";
+                        i2="14";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i4",i11);
+                        i1.putExtra("i4",i2);
                         startActivity(i1);
                         x=true;
 
@@ -104,23 +82,12 @@ public static String i1,i2,i3,i11,i22,i33;;
                 item22.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        i22="9";
+                        i3="8";
                         Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i5",i22);
+                        i1.putExtra("i5",i3);
                         startActivity(i1);
                         x=true;
 
-                    }
-                });
-
-                item33.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        i33="18";
-                        Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
-                        i1.putExtra("i6",i33);
-                        startActivity(i1);
-                        x=true;
                     }
                 });
 

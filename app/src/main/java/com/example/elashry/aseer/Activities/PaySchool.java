@@ -1,34 +1,33 @@
 package com.example.elashry.aseer.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.elashry.aseer.Adapters.adapterPS;
 import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.Connector;
-import com.example.elashry.aseer.dataProccess.DataEncap;
 import com.example.elashry.aseer.dataProccess.DataModel;
 import com.example.elashry.aseer.dataProccess.JsonParser;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-import static com.example.elashry.aseer.Adapters.AdapterSchool.addressc;
+import static com.example.elashry.aseer.Activities.Arcmenu.x;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.addresssc;
 import static com.example.elashry.aseer.Adapters.AdapterSchool.emailsc;
 import static com.example.elashry.aseer.Adapters.AdapterSchool.faxsc;
 import static com.example.elashry.aseer.Adapters.AdapterSchool.idsc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.latitude;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.longitude;
 import static com.example.elashry.aseer.Adapters.AdapterSchool.namesc;
 import static com.example.elashry.aseer.Adapters.AdapterSchool.phonesc;
-import static com.example.elashry.aseer.Adapters.AdapterSchool.scid;
 import static com.example.elashry.aseer.dataProccess.JsonParser.amount;
-import static com.example.elashry.aseer.Activities.Arcmenu.x;
-
 
 
 public class PaySchool extends AppCompatActivity {
@@ -37,7 +36,10 @@ public class PaySchool extends AppCompatActivity {
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private adapterPS adapter;
-   // public static String sp;
+    public static Double slatitude;
+    public static Double slongitude;
+
+    // public static String sp;
   public static   ArrayList<String> scp;
     TextView name,phone ,address,email ,fax ,t1,t2;
     @Override
@@ -61,45 +63,80 @@ public class PaySchool extends AppCompatActivity {
 
         scp=new ArrayList<>();
         scp.add( ii.getStringExtra("i1"));
-        scp.add( ii.getStringExtra("i2"));
-        scp.add( ii.getStringExtra("i3"));
+      //  scp.add( ii.getStringExtra("i2"));
+       // scp.add( ii.getStringExtra("i3"));
         scp.add( ii.getStringExtra("i4"));
         scp.add( ii.getStringExtra("i5"));
-        scp.add( ii.getStringExtra("i6"));
+       // scp.add( ii.getStringExtra("i6"));
 //        Toast.makeText(this, idsc +"", Toast.LENGTH_SHORT).show();
      //   Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+//       Toast.makeText(this, idsc +"", Toast.LENGTH_SHORT).show();
+//
+//        Toast.makeText(this, idsc.get(0) +"", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, idsc.get(6) +"", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
 
-        if(idsc.get(5).equals(scp.get(0))){
-            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+        if(scp.contains(idsc.get(0))){
+            name.setText(namesc.get(0));
+//            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, idsc.get(0) +"", Toast.LENGTH_SHORT).show();
+            //      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+            phone.setText(phonesc.get(0));
+            address.setText(addresssc.get(0));
+            email.setText(emailsc.get(0));
+            fax.setText(faxsc.get(0));
+            slatitude=latitude.get(0);
+            slongitude=longitude.get(0);
+            x=false;
 
-            name.setText(namesc);
-            Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
-            phone.setText(phonesc);
-            address.setText(addressc);
-            email.setText(emailsc);
-            fax.setText(faxsc);
+        }
+        else if (scp.contains(idsc.get(6))) {
+            name.setText(namesc.get(6));
+//            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, idsc.get(6) +"", Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+            phone.setText(phonesc.get(6));
+            address.setText(addresssc.get(6));
+            email.setText(emailsc.get(6));
+            fax.setText(faxsc.get(6));
+            slatitude=latitude.get(6);
+            slongitude=longitude.get(6);
             x=false;
         }
-        else if (idsc.get(3).equals(scp.get(1))) {  name.setText(namesc);
-            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+        else if (scp.contains(idsc.get(3))) {
+            name.setText(namesc.get(3));
+//            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
+            //      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+            phone.setText(phonesc.get(3));
+            address.setText(addresssc.get(3));
+            email.setText(emailsc.get(3));
+            fax.setText(faxsc.get(3));
+            slatitude=latitude.get(3);
+            slongitude=longitude.get(3);
+            x=false;
+        }
 
-            Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
-            phone.setText(phonesc);
-            address.setText(addressc);
-            email.setText(emailsc);
-            fax.setText(faxsc);
-            x=false;}
-        else if (idsc.get(0).equals(scp.get(2))) {
-            name.setText(namesc);
-            Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
-            phone.setText(phonesc);
-            address.setText(addressc);
-            email.setText(emailsc);
-            fax.setText(faxsc);
-            x=false;}
+//        phone.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String p= (String) phone.getText();
+//
+//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(p));
+//                startActivity(intent);
+//            }
+//        });
+//
+        address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaySchool.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        else if (idsc.get(3).equals(scp)) { name.setText(namesc);
+       /* else if (idsc.get(3).equals(scp)) { name.setText(namesc);
             Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
             phone.setText(phonesc);
             address.setText(addressc);
@@ -116,7 +153,7 @@ public class PaySchool extends AppCompatActivity {
             phone.setText(phonesc);
             address.setText(addressc);
             email.setText(emailsc);
-            fax.setText(faxsc);}
+            fax.setText(faxsc);}*/
 
        // Toast.makeText(this, sp, Toast.LENGTH_SHORT).show();
         Connector connector = new Connector();
@@ -167,8 +204,12 @@ public class PaySchool extends AppCompatActivity {
     }
     @Override
     public boolean onSupportNavigateUp(){
-        finish();
+        Intent i=new Intent(this,Home.class);
+        startActivity(i);
         return true;
     }
+
+
+
 }
 

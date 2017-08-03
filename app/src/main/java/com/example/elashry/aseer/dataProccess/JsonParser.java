@@ -1,10 +1,5 @@
 package com.example.elashry.aseer.dataProccess;
 
-import android.widget.Toast;
-
-import com.example.elashry.aseer.Activities.Home;
-import com.example.elashry.aseer.Activities.School;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,11 +7,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.example.elashry.aseer.Activities.Home.s;
-import static com.example.elashry.aseer.Activities.Login.school;
-import static com.example.elashry.aseer.Activities.Select.y;
-import static com.example.elashry.aseer.Adapters.AdapterSchool.idsc;
-import static com.example.elashry.aseer.Adapters.AdapterSchool.scid;
 import static com.example.elashry.aseer.Activities.PaySchool.scp;
+import static com.example.elashry.aseer.Activities.Select.y;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.addresssc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.emailsc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.faxsc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.idsc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.latitude;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.longitude;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.namesc;
+import static com.example.elashry.aseer.Adapters.AdapterSchool.phonesc;
 
 
 public class JsonParser {
@@ -24,7 +24,6 @@ public class JsonParser {
     ArrayList<DataEncap> data;
     ArrayList<DataModel> mdata;
 //    public static String namesc,phonesc,emailsc ,faxsc,addressc;
-    public static double latitudesc,longitudesc;
     public static String state;
     public static String exame;
     public static Double amount;
@@ -125,6 +124,13 @@ public class JsonParser {
 
         data = new ArrayList<>();
         idsc = new ArrayList<>();
+        namesc = new ArrayList<>();
+        phonesc = new ArrayList<>();
+        emailsc = new ArrayList<>();
+        faxsc = new ArrayList<>();
+        addresssc = new ArrayList<>();
+        latitude = new ArrayList<>();
+        longitude = new ArrayList<>();
 
         try {
 
@@ -147,7 +153,13 @@ public class JsonParser {
                            mainObjectArray.getString(KeyTags.school_id),  mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
                     data.add(enca);
                       idsc.add(mainObjectArray.getString(KeyTags.school_id));
-
+                  namesc.add(mainObjectArray.getString(KeyTags.school_name));
+                  phonesc.add(mainObjectArray.getString(KeyTags.school_phone));
+                  emailsc.add(mainObjectArray.getString(KeyTags.school_email));
+                  addresssc.add(mainObjectArray.getString(KeyTags.school_adress));
+                  faxsc.add(mainObjectArray.getString(KeyTags.school_fax));
+                  latitude.add(mainObjectArray.getDouble(KeyTags.school_latitude));
+                  longitude.add(mainObjectArray.getDouble(KeyTags.school_longitude));
 
            }
 //                namesc=mainObjectArray.getString(KeyTags.school_name);

@@ -23,7 +23,7 @@ android {
 
 }
 android{
-    defaultConfig.applicationId="your package"
+    defaultConfig.applicationId="com.example.elashry.aseer"
 }
 
 dependencies {

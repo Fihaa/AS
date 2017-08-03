@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.elashry.aseer"
-    android:installLocation="preferExternal">
+  >
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -87,8 +87,10 @@
         <activity
             android:name=".Activities.Anshta"
             android:label="@string/activity_anshta" />
+
+
         <activity android:name=".Activities.Tafasel" />
-        <activity android:name=".Activities.Arcmenu" />
+        <activity android:name=".Activities.Arcmenu"  android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Activities.WebViiew"
             android:label="@string/title_activity_web_viiew" />
@@ -96,7 +98,14 @@
         <activity
             android:name=".Activities.MyIntro"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.PaySchool" />
+        <activity android:name=".Activities.PaySchool"
+            android:label="@string/activity_payschool" />
+        <activity
+            android:name=".Activities.nafic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TargetActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

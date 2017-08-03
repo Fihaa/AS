@@ -40,9 +40,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import static android.R.attr.action;
+import static com.example.elashry.aseer.Activities.PaySchool.slatitude;
+import static com.example.elashry.aseer.Activities.PaySchool.slongitude;
 import static com.example.elashry.aseer.Activities.Select.y;
-import static com.example.elashry.aseer.dataProccess.JsonParser.latitudesc;
-import static com.example.elashry.aseer.dataProccess.JsonParser.longitudesc;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -238,9 +238,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             ));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Soudia, 18));
         }else {*/
-            Intent i1 =new Intent(MapsActivity.this,Arcmenu.class);
-            startActivity(i1);
-        LatLng Soudia = new LatLng(27.510612, 41.681779);
+
+        LatLng Soudia = new LatLng(slatitude, slongitude);
 
       //  Toast.makeText(this, phonesc, Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, (int) latitudesc, Toast.LENGTH_SHORT).show();
@@ -292,12 +291,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Intent intent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.snapchat.com"));
                 startActivity(intent3);
                 break;
-            case R.id.help:
+         //   case R.id.help:
                // Toast.makeText(this, emailsc, Toast.LENGTH_SHORT).show();
 
 //                Intent intent4 = new Intent(Intent.ACTION_DIAL, Uri.parse(emailsc));
 //                startActivity(intent4);
-                break;
+              //  break;
         }
 
         return super.onOptionsItemSelected(item);

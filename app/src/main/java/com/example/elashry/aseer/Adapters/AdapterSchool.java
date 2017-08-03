@@ -1,26 +1,17 @@
 package com.example.elashry.aseer.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.elashry.aseer.Activities.Arcmenu;
-import com.example.elashry.aseer.Activities.Detail;
 import com.example.elashry.aseer.Activities.Home;
-import com.example.elashry.aseer.Activities.News;
-import com.example.elashry.aseer.Activities.School;
 import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.DataEncap;
-import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -30,8 +21,9 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
     Context context;
     Arcmenu arc;
     Home school;
-   public static ArrayList<String> idsc;
-    public static String namesc,phonesc,emailsc ,faxsc,addressc,scid;
+   public static ArrayList<String> idsc,namesc,phonesc,emailsc ,faxsc,addresssc;
+    public static ArrayList<Double> latitude,longitude;
+  //  public static String namesc,phonesc,emailsc ,faxsc,addressc,scid;
 
     DataEncap encap = new DataEncap();
 
@@ -87,12 +79,12 @@ public class AdapterSchool extends RecyclerView.Adapter<AdapterSchool.ViewHolder
         holder.t7.setText(encap.getSchool_longitude());
         holder.t8.setText(encap.getSchool_id());
 
-        namesc=encap.getSchool_name();
-        phonesc=encap.getSchool_phone();
-        addressc=encap.getSchool_adress();
-        faxsc=encap.getSchool_fax();
-        emailsc=encap.getSchool_email();
-        scid= (String) holder.t8.getText();
+     //   namesc=encap.getSchool_name();
+//        phonesc=encap.getSchool_phone();
+//        addressc=encap.getSchool_adress();
+//        faxsc=encap.getSchool_fax();
+//        emailsc=encap.getSchool_email();
+//        scid= (String) holder.t8.getText();
 
 
 

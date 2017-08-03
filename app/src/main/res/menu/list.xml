@@ -20,7 +20,7 @@
             <item
                 android:id="@+id/snapchat"
                 android:icon="@drawable/snapchat"
-                android:title="SnapChat"
+                android:title="Tweeter"
                 />
 
             <!-- Check updates -->
@@ -33,13 +33,6 @@
                 android:id="@+id/call"
                 android:icon="@drawable/call1"
                 android:title="call"
-                />
-
-            <!-- Check updates -->
-            <item
-                android:id="@+id/help"
-                android:icon="@drawable/call"
-                android:title="help"
                 />
         </menu>
     </item>

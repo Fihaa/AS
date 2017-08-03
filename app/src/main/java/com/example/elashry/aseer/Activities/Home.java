@@ -30,7 +30,6 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.elashry.aseer.Activities.Login.editor;
-import static com.example.elashry.aseer.Activities.Select.x;
 import static com.example.elashry.aseer.Activities.Select.y;
 
 public class Home extends AppCompatActivity implements CircleLayout.OnItemClickListener, CircleLayout.OnRotationFinishedListener {
@@ -66,6 +65,7 @@ Button out;
         Intent ii = getIntent();
         s = ii.getStringExtra("id");
         n = ii.getStringExtra("name");
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
@@ -138,7 +138,6 @@ Button out;
 
         if (isOnline()){
 
-            if (x==false ){
 
         switch (view.getId()) {
 
@@ -153,10 +152,12 @@ Button out;
                     Intent i2 = new Intent(Home.this, ghyaab.class);
                     showProgress(view);
                     startActivity(i2);
-                }else {}
+                }else {
+                    Toast.makeText(this, "هذا ليس من صلاحياتك ", Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.arrive:
-                Intent i3 =new Intent(Home.this,MapsActivity.class);
+                Intent i3 =new Intent(Home.this,Arcmenu.class);
                 showProgress(view);
 
                 startActivity(i3);
@@ -173,7 +174,7 @@ Button out;
                     Intent i4 =new Intent(Home.this,WebViiew.class);
                     showProgress(view);
 
-                    startActivity(i4);}
+                    startActivity(i4);}else {}
                 }
 
                 break;
@@ -192,10 +193,13 @@ Button out;
                 }else {}
                 break;
             case R.id.table:
-                Intent i7 =new Intent(Home.this,Table.class);
-                showProgress(view);
+                if (y.equals("2")|y.equals("3")) {
 
-                startActivity(i7);
+                    Intent i7 = new Intent(Home.this, Table.class);
+                    showProgress(view);
+
+                    startActivity(i7);
+                }else{}
                 break;
             case R.id.news:
                 Intent i8 =new Intent(Home.this,News.class);
@@ -213,47 +217,44 @@ Button out;
                 }else {}
                 break;
         }
-      }else if (x==true){
-                switch (view.getId()) {
+//      }else if (x==true){
+//                switch (view.getId()) {
+//
+//                    case R.id.activity:
+//                        Intent i1 =new Intent(Home.this,Anshta.class);
+//                        showProgress(view);
+//
+//                        startActivity(i1);
+//                        break;
+//                    case R.id.news:
+//                        Intent i2 =new Intent(Home.this,News.class);
+//                        showProgress(view);
+//
+//                        startActivity(i2);
+//                        break;
+//                    case R.id.sharf:
+//                        Intent i3 =new Intent(Home.this,Sharf.class);
+//                        showProgress(view);
+//
+//                        startActivity(i3);
+//
+//                        break;
+//                    case R.id.arrive:
+//                        progressDialog.dismiss();
+//                        Intent i4 =new Intent(Home.this,Arcmenu.class);
+//                        showProgress(view);
+//                        startActivity(i4);
+//                        break;
+//                    case R.id.table:
+//                        break;
+//                    case R.id.homework:
+//                        break;
+//                    case R.id.rsoom:
+//                        break;
+//                 }
+//    }
 
-                    case R.id.activity:
-                        Intent i1 =new Intent(Home.this,Anshta.class);
-                        showProgress(view);
-
-                        startActivity(i1);
-                        break;
-                    case R.id.news:
-                        Intent i2 =new Intent(Home.this,News.class);
-                        showProgress(view);
-
-                        startActivity(i2);
-                        break;
-                    case R.id.sharf:
-                        Intent i3 =new Intent(Home.this,Sharf.class);
-                        showProgress(view);
-
-                        startActivity(i3);
-
-                        break;
-                    case R.id.arrive:
-                        progressDialog.dismiss();
-                        Intent i4 =new Intent(Home.this,MapsActivity.class);
-                        showProgress(view);
-
-                        startActivity(i4);
-
-                        break;
-                    case R.id.table:
-                        break;
-                    case R.id.homework:
-
-                        break;
-                    case R.id.rsoom:
-                        break;
-            }
-    }
-
-        }else {
+        } else {
             NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(Home.this);
 
             effect=Effectstype.Flipv;
