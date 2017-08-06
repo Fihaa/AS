@@ -20,69 +20,67 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         app:isRotating="false"
-        app:radius="110dp"
+        app:radius="154dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone_la"
             android:id="@+id/apsent"
-            android:src="@drawable/icon10"
-            />
+            android:src="@drawable/eicon10"/>
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone_la"
             android:id="@+id/homework"
             android:src="@drawable/icon2"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone_la"
             android:id="@+id/activity"
-            android:src="@drawable/icon3"
+            android:src="@drawable/eicon3"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone_la"
             android:id="@+id/news"
-            android:src="@drawable/icon4"
+            android:src="@drawable/eicon4"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone_la"
             android:id="@+id/table"
-            android:src="@drawable/icon5"
+            android:src="@drawable/eicon5"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icone"
+            style="@style/icone_la"
             android:id="@+id/arrive"
-            android:src="@drawable/icon6"
-
+            android:src="@drawable/eicon6"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icone"
+            style="@style/icone_la"
             android:id="@+id/sharf"
-            android:src="@drawable/icon7"
+            android:src="@drawable/eicon7"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icone"
+            style="@style/icone_la"
             android:id="@+id/rsoom"
-            android:src="@drawable/icon8"
+            android:src="@drawable/eicon8"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icone"
+            style="@style/icone_la"
             android:id="@+id/state"
-            android:src="@drawable/icon9"
+            android:src="@drawable/eicon9"
 
             />
 
@@ -95,7 +93,7 @@
         android:layout_width="200dp"
         android:textColor="#f5fafa"
         android:textStyle="bold"
-        android:textSize="35dp"
+        android:textSize="25dp"
         android:text="@string/out"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

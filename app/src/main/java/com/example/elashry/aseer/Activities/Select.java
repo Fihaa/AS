@@ -20,7 +20,7 @@ public class Select extends AppCompatActivity {
 
     public boolean isFirstStart;
     Context mcontext;
-    public static String y;
+    public static String y="2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,5 +99,10 @@ public class Select extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+  finish();
+        super.onBackPressed();
     }
 }

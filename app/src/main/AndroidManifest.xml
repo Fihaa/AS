@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.elashry.aseer"
-  >
+    package="com.example.elashry.aseer">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -106,6 +105,9 @@
         <activity
             android:name=".Activities.TargetActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.Notification"
+           />
     </application>
 
 </manifest>

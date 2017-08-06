@@ -34,7 +34,7 @@
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icone_la"
             android:id="@+id/homework"
-            android:src="@drawable/icon2"
+            android:src="@drawable/work"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView

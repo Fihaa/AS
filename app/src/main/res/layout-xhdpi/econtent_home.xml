@@ -20,39 +20,39 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         app:isRotating="false"
-        app:radius="110dp"
+        app:radius="120dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone"
             android:id="@+id/apsent"
             android:src="@drawable/eicon10"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone"
             android:id="@+id/homework"
-            android:src="@drawable/eicon2"
+            android:src="@drawable/icon2"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone"
             android:id="@+id/activity"
             android:src="@drawable/eicon3"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone"
             android:id="@+id/news"
             android:src="@drawable/eicon4"
 
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
-            style="@style/icon"
+            style="@style/icone"
             android:id="@+id/table"
             android:src="@drawable/eicon5"
 

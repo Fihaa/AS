@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.elashry.aseer.R;
 import com.squareup.picasso.Picasso;
@@ -28,7 +29,6 @@ public class Detail extends AppCompatActivity {
         desc.setText(intent.getStringExtra("desc"));
         tilte.setText(intent.getStringExtra("title"));
         date.setText(intent.getStringExtra("date"));
-        Picasso.with(this).load("http://wefakhail.org/fihaa/uploads/thumbs/" +intent.getStringExtra("image")).into(imageView);
-
+        Picasso.with(this).load("http://wefakhail.org/fihaa/uploads/thumbs/"+intent.getStringExtra("image")).into(imageView);
     }
 }

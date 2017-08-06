@@ -43,7 +43,6 @@ public class Login extends AppCompatActivity {
     private final String student_url ="http://wefakhail.org/fihaa/api/students";
     private final String user_url ="http://wefakhail.org/fihaa/api/users";
     private final String parents_url ="http://wefakhail.org/fihaa/api/parents";
-    final static String api = "http://wefakhail.org/fihaa/api/schools";
 
     private Effectstype effect;
     Button b1;
@@ -55,10 +54,11 @@ EditText edt1,edtn , edtpass;
     public static String namesc,phonesc,emailsc;
     public static double latitudesc,longitudesc;
 
+    public  static boolean log=true;
     View view;
     ProgressDialog progressDialog;
-    public static final String MY_PREFS_NAME = "MyPrefsFile";
-    public static SharedPreferences.Editor editor;
+    private SharedPreferences spref,login_spref,usref,loginuserpref,prref,loginparentpref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,30 +77,88 @@ EditText edt1,edtn , edtpass;
             edtn.setVisibility(View.GONE);
             edt1.setVisibility(View.VISIBLE);
 
+            loginuserpref = getSharedPreferences("loginusref",MODE_PRIVATE);
+            boolean save_user_data = loginuserpref.getBoolean("save_user",false);
+            if (save_user_data==true)
+            {
+                Intent intent = new Intent(Login.this, Home.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
 
+                Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
+                intent.putExtra("s",spref.getString("student_id","")) ;
+                intent.putExtra("n",spref.getString("student_name",""));
+                startActivity(intent);
+
+
+            }
+
+            usref = getSharedPreferences("SaveUserData",MODE_PRIVATE);
+
+        }else if (y.equals("2")){
+            login_spref = getSharedPreferences("loginspref",MODE_PRIVATE);
+            boolean save_data = login_spref.getBoolean("save_student",false);
+            if (save_data==true)
+            {
+                log=true;
+                Intent intent = new Intent(Login.this, Home.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
+
+                //Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
+                intent.putExtra("s",spref.getString("student_id","")) ;
+                intent.putExtra("n",spref.getString("student_name",""));
+                startActivity(intent);
+
+
+            }
+
+            spref = getSharedPreferences("SaveManagerData",MODE_PRIVATE);
+            edtpass.setVisibility(View.GONE);
+            view.setVisibility(View.GONE);
+            edt1.setVisibility(View.GONE);
+            edtn.setVisibility(View.VISIBLE);
 
         }else{
             edtpass.setVisibility(View.GONE);
             view.setVisibility(View.GONE);
             edt1.setVisibility(View.GONE);
             edtn.setVisibility(View.VISIBLE);
+            loginparentpref = getSharedPreferences("loginprref",MODE_PRIVATE);
+            boolean save_parent_data = loginparentpref.getBoolean("save_parent",false);
+            if (save_parent_data==true)
+            {
+                Intent intent = new Intent(Login.this, Home.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
+
+                //Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
+                intent.putExtra("s",spref.getString("student_id","")) ;
+                intent.putExtra("n",spref.getString("student_name",""));
+                startActivity(intent);
+
+
+            }
+
+            prref = getSharedPreferences("SaveParentData",MODE_PRIVATE);
 
         }
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
+                spref = getSharedPreferences("SaveManagerData",MODE_PRIVATE);
+                usref = getSharedPreferences("SaveUserData",MODE_PRIVATE);
+                prref = getSharedPreferences("SaveParentData",MODE_PRIVATE);
 
                 final String id = edtn.getText().toString();
                 final String email = edt1.getText().toString();
 
                 final String pass = convertPassMd5(edtpass.getText().toString());
 
-                SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-                String restoredText = prefs.getString("text", null);
-                if (restoredText != null) {
-                    String idName = prefs.getString("idName",  "No name defined"); //0 is the default value.
-                }
                 if (isOnline()){
 
                 if (!TextUtils.isEmpty(id)&&y.equals("2")) {
@@ -130,17 +188,16 @@ EditText edt1,edtn , edtpass;
                                         }
                                         if (list.size()>0)
                                         {
-
+String x=object.get("student_id_pk").toString();
                                             // MY_PREFS_NAME - a static String variable like:
-
-                                            Intent i=new Intent(Login.this,Home.class);
+                                            createShared("loginspref",x,object.get("student_name").toString());
+                                            Intent i=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             i.putExtra("id",object.get("student_id_pk").toString());
                                             i.putExtra("name",object.get("student_name").toString());
+                                            log=false;
 //                                            Toast.makeText(Login.this, phonesc, Toast.LENGTH_SHORT).show();
-                                            showProgress(view);
-                                            editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                                            editor.putString("idName", "1149159053");
-                                            editor.apply();
+//                                            showProgress(view);
+
                                             //    Toast.makeText(Login.this,object.get("student_id_pk").toString() , Toast.LENGTH_SHORT).show();
                                             startActivity(i);
                                         }
@@ -175,19 +232,28 @@ EditText edt1,edtn , edtpass;
                                             if (id.toString().equals(object.get("parent_identity").toString()))
                                             {
 
+
                                                 list.add(object);
 
 
                                                 break;
-
-                                            }else{
 
                                             }
 
                                         }
                                         if (list.size()>0)
                                         {
-                                         //   Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
+                                            createparentShared("loginprref",object.get("parent_identity").toString());
+                                            Intent ii=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);                                                                        ii.putExtra("name",object.get("student_name").toString());
+                                            ii.putExtra("id",object.get("student_id_pk").toString());
+                                            startActivity(ii);
+                                            log=false;
+//                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
+                                        //    Toast.makeText(Login.this, "mohhhh", Toast.LENGTH_SHORT).show();
+                                            createShared("loginspref",object.get("student_id").toString(),object.get("student_name").toString());
+
+
+                                            //   Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                           //  Toast.makeText(Login.this,object.get("student_national_id").toString() , Toast.LENGTH_SHORT).show();
                                             sid=object.get("student_id_fk").toString();
 
@@ -204,12 +270,12 @@ EditText edt1,edtn , edtpass;
                                                                     if (sid.equals(object.get("student_id_pk").toString())){
                                                                         school=object.get("school_id_fk").toString();
 
-                                                                        Intent ii=new Intent(Login.this,Home.class);
-                                                                        ii.putExtra("name",object.get("student_name").toString());
+                                                                       /* createparentShared("loginprref",object.get("parent_identity").toString());
+                                                                        Intent ii=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);                                                                        ii.putExtra("name",object.get("student_name").toString());
                                                                         ii.putExtra("id",object.get("student_id_pk").toString());
 //                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                                                         showProgress(view);
-                                                                        startActivity(ii);
+                                                                        startActivity(ii);*/
 //                                                                        Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                                                     }
                                                                 }
@@ -271,11 +337,11 @@ EditText edt1,edtn , edtpass;
                                         }
                                         if (list.size()>0)
                                         {
-                                            Intent i=new Intent(Login.this,Home.class);
-                                            y="1";
+                                            createuserShared("loginusref",object.get("user_username").toString(),object.get("user_pass").toString());
+                                            Intent i=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);                                            y="1";
                                             i.putExtra("y", y);
                                             showProgress(view);
-
+log=false;
                                             startActivity(i);
                                         }
                                         else
@@ -356,7 +422,38 @@ EditText edt1,edtn , edtpass;
         return password;
     }
 
+    private void createShared(String shared_name,String student_id,String student_name)
+    {
+        SharedPreferences spref = getSharedPreferences(shared_name,MODE_PRIVATE);
+        SharedPreferences.Editor editor = spref.edit();
+        editor.putBoolean("save_student",true);
+        editor.putString("student_id",student_id);
+        editor.putString("student_name",student_name);
 
+        editor.apply();
+        editor.commit();
+    }
+    private void createuserShared(String shared_name,String usern_name,String user_pass)
+    {
+        SharedPreferences usref = getSharedPreferences(shared_name,MODE_PRIVATE);
+        SharedPreferences.Editor editor = usref.edit();
+        editor.putBoolean("save_user",true);
+        editor.putString("usern_name",usern_name);
+        editor.putString("user_pass",user_pass);
+
+        editor.apply();
+        editor.commit();
+    }
+
+    private void createparentShared(String shared_name,String parent_id)
+    {
+        SharedPreferences prref = getSharedPreferences(shared_name,MODE_PRIVATE);
+        SharedPreferences.Editor editor = prref.edit();
+        editor.putBoolean("save_parent",true);
+        editor.putString("parent_id",parent_id);
+        editor.apply();
+        editor.commit();
+    }
 
 //    @Override
 //    public boolean onSupportNavigateUp(){

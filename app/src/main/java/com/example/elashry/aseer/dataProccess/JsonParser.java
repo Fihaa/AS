@@ -23,6 +23,7 @@ public class JsonParser {
 
     ArrayList<DataEncap> data;
     ArrayList<DataModel> mdata;
+    ArrayList<NotifyModel>ndata;
 //    public static String namesc,phonesc,emailsc ,faxsc,addressc;
     public static String state;
     public static String exame;
@@ -40,7 +41,7 @@ public class JsonParser {
                 JSONObject mainObjectArray = jsonArray.getJSONObject(i);
 
                 DataEncap encap = new DataEncap(
-                        mainObjectArray.getString(KeyTags.imgKey), mainObjectArray.getString(KeyTags.titleKey), mainObjectArray.getString(KeyTags.dateKey), mainObjectArray.getString(KeyTags.descKey));
+                        mainObjectArray.getString(KeyTags.imgKey), mainObjectArray.getString(KeyTags.titleKey), mainObjectArray.getLong(KeyTags.dateKey), mainObjectArray.getString(KeyTags.descKey));
 
                 data.add(encap);
 
@@ -342,7 +343,33 @@ public class JsonParser {
         return mdata;
 
     }
+    public ArrayList<NotifyModel> JsonProcessNotify(String jsonFile) {
 
+        ndata = new ArrayList<>();
+
+        try {
+
+            JSONArray jsonArray = new JSONArray(jsonFile);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject mainObjectArray = jsonArray.getJSONObject(i);
+                if (s.equals(mainObjectArray.getString(KeyTags.f_id))&&(y.equals("2")|y.equals("3"))){
+
+                    NotifyModel enca = new NotifyModel(
+                            mainObjectArray.getString(KeyTags.invoice_id),mainObjectArray.getString(KeyTags.invoice_payment),mainObjectArray.getString(KeyTags.invoice_left),mainObjectArray.getString(KeyTags.invoice_date));
+                    ndata.add(enca);
+
+                }else {
+
+                }
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return ndata;
+    }
 
     public ArrayList<DataEncap> getlist() {
         return data;
@@ -350,4 +377,8 @@ public class JsonParser {
     public ArrayList<DataModel> getmlist() {
         return mdata;
     }
+    public ArrayList<NotifyModel> getnlist() {
+        return ndata;
+    }
+
 }

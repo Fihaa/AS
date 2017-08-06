@@ -98,6 +98,9 @@
     <string name="rsomtirm1">Amount Tirm1</string>
     <string name="rsomtirm2">Amount Tirm2</string>
     <string name="activity_payschool">Arrive</string>
+    <string name="last">last</string>
+    <string name="date">date</string>
+    <string name="Visitor">Visitor</string>
 
 </resources>
 

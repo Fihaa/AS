@@ -31,8 +31,8 @@
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout"
-        android:layout_width="256px"
-        android:layout_height="256px"
+        android:layout_width="156px"
+        android:layout_height="156px"
         app:menu_scr="@drawable/girl"
         app:menu_open="arc_right"
         app:menu_radius="200dp"
@@ -45,7 +45,7 @@
             android:id="@+id/fab_arc_menu_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/iend1"
+            android:src="@drawable/end1"
             />
 
 
@@ -56,8 +56,8 @@
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout2"
-        android:layout_width="256px"
-        android:layout_height="256px"
+        android:layout_width="156px"
+        android:layout_height="156px"
         app:menu_scr="@drawable/boy"
         app:menu_open="arc_right"
         app:menu_radius="200dp"

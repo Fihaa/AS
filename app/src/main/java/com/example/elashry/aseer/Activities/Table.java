@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
 
-import com.example.elashry.aseer.Adapters.AdapterNews;
 import com.example.elashry.aseer.Adapters.AdapterTable;
 import com.example.elashry.aseer.Models.ListRecycle;
 import com.example.elashry.aseer.R;

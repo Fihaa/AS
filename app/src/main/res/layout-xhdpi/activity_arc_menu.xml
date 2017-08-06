@@ -31,12 +31,13 @@
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout"
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="270px"
+        android:layout_height="270px"
         app:menu_scr="@drawable/girl"
         app:menu_open="arc_right"
-        app:menu_radius="140dp"
+        app:menu_radius="150dp"
         app:menu_color="#f5f9f8"
+
 
         >
 
@@ -44,7 +45,7 @@
             android:id="@+id/fab_arc_menu_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/iend1"
+            android:src="@drawable/end1"
             />
 
 
@@ -55,11 +56,11 @@
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcmenu_android_example_layout2"
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="270px"
+        android:layout_height="270px"
         app:menu_scr="@drawable/boy"
         app:menu_open="arc_right"
-        app:menu_radius="140dp"
+        app:menu_radius="150dp"
         app:menu_color="#f5f9f8"
 
 

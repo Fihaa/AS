@@ -55,7 +55,7 @@
                     android:layout_margin="4dp"
                     android:layout_marginTop="10dp"
                     android:textSize="16dp"
-                    android:textColor="#18b9aa"
+                    android:textColor="#0b7369"
                     />
 
                 <TextView
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_margin="4dp"
-                    android:textColor="#35dece"
+                    android:textColor="#0a7369"
                     android:textSize="18dp"
 
                     />

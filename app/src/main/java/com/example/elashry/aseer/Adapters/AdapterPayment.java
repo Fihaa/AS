@@ -12,6 +12,7 @@ import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.DataModel;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by elashry on 7/19/2017.
@@ -35,11 +36,16 @@ public AdapterPayment(ArrayList<DataModel> arrayList, Context context, Rsoom rso
 
     @Override
 public AdapterPayment.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (Locale.getDefault().getLanguage().equals("en")) {
+            View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pay, parent, false);
 
-        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pay, parent, false);
+            ViewHolder viewHolder = new ViewHolder(layout);
+            return viewHolder;        } else {
+            View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.eitem_pay, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(layout);
-        return viewHolder;
+            ViewHolder viewHolder = new ViewHolder(layout);
+            return viewHolder;        }
+
         }
 /*
 

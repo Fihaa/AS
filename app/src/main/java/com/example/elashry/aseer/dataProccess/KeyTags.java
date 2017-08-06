@@ -69,4 +69,9 @@ public class KeyTags {
     public static final String payset_hijri_year = "payset_hijri_year";
     public static final String school_fk="school_id_fk";
 
+    public static final String invoice_id="invoice_id";
+    public static final String invoice_payment="invoice_payment";
+    public static final String invoice_left="invoice_left";
+    public static final String invoice_date="invoice_date";
+
 }

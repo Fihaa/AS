@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
 
-import com.example.elashry.aseer.Adapters.AdapterNews;
 import com.example.elashry.aseer.Adapters.AdapterPayment;
 import com.example.elashry.aseer.Adapters.AdapterSchool;
 import com.example.elashry.aseer.Adapters.AdapterSharf;
@@ -23,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import static com.example.elashry.aseer.Activities.Home.s;
 
 
 public class School extends AppCompatActivity {
@@ -36,7 +34,7 @@ public class School extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
 
 //        Connector connector = new Connector();
 //

@@ -1,7 +1,13 @@
 package com.example.elashry.aseer.dataProccess;
 
 
+import com.example.elashry.aseer.Activities.Login;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.*;
+import java.text.*;
 
 public class DataEncap {
 
@@ -10,7 +16,7 @@ public class DataEncap {
     private String desc;
     private String title;
     private String titletable;
-    private String date;
+    private long date;
     private String id;
     private String name;
     private String exam;
@@ -53,7 +59,7 @@ public class DataEncap {
         this.exam_degree = exam_degree;
     }
 
-    public DataEncap(String img, String title, String date, String desc) {
+    public DataEncap(String img, String title, long date, String desc) {
 
         this.img = img;
         this.title = title;
@@ -175,7 +181,6 @@ public class DataEncap {
     }
 
     public String getImg() {
-        img = "http://wefakhail.org/fihaa/uploads/thumbs/" + img;
         return img;
     }
 
@@ -184,8 +189,12 @@ public class DataEncap {
     }
 
     public String getDate() {
+        Date mdate = new Date(date);
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       // format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
+        String formatted = format.format(mdate);
+  return formatted;
 
-        return date;
     }
 
     public String getTitle() {
@@ -219,4 +228,19 @@ public class DataEncap {
     public String getWid() {
         return wid;
     }
+
+
+
+//    public class Test {
+//        public static void main(String[] args) throws InterruptedException {
+//            Date date = new Date(1318386508000L);
+//            DateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+//            format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
+//            String formatted = format.format(date);
+//            System.out.println(formatted);
+//            format.setTimeZone(TimeZone.getTimeZone("Australia/Sydney"));
+//            formatted = format.format(date);
+//            System.out.println(formatted);
+//        }
+//    }
 }

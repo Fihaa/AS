@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.elashry.aseer.Adapters.AdapterExam;
-import com.example.elashry.aseer.Adapters.AdapterNews;
 import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.Connector;
 import com.example.elashry.aseer.dataProccess.DataEncap;
@@ -21,10 +20,7 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.elashry.aseer.Activities.Home.n;
-import static com.example.elashry.aseer.dataProccess.DataEncap.attstatue;
-import static com.example.elashry.aseer.dataProccess.DataEncap.exam_degree;
-import static com.example.elashry.aseer.dataProccess.JsonParser.exame;
-import static com.example.elashry.aseer.dataProccess.JsonParser.state;
+
 
 public class Elmstwa extends AppCompatActivity {
     final static String api = "http://wefakhail.org/fihaa/api/exams";

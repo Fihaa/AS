@@ -15,6 +15,10 @@ import android.widget.Button;
 
 import com.example.elashry.aseer.R;
 
+import static com.example.elashry.aseer.Adapters.AdapterNotify.x;
+import static com.example.elashry.aseer.Adapters.AdapterNotify.y;
+import static com.example.elashry.aseer.Adapters.AdapterNotify.z;
+
 public class nafic extends AppCompatActivity {
     NotificationManager mNotificationManager;
 
@@ -40,8 +44,9 @@ public class nafic extends AppCompatActivity {
 
         //Assign BigText style notification
         NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
-        bigText.bigText(" يرجي تسليم الرسوم المدرسيه قبل ميعاد 1-8");
-        bigText.setBigContentTitle("رساله تذكريه");
+        bigText.bigText(x);
+        bigText.setBigContentTitle(y);
+        bigText.setBigContentTitle(z);
         bigText.setSummaryText("By: الادراه");
 
         //build notification

@@ -13,13 +13,21 @@
     android:background="@color/back"
     tools:context="com.example.elashry.aseer.Activities.Home"
     >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fff"
+        android:layout_alignBottom="@+id/circle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="873dp" />
 
     <com.szugyi.circlemenu.view.CircleLayout
         android:id="@+id/circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        app:isRotating="false"
+        app:isRotating="true"
         app:radius="200dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -36,7 +44,7 @@
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icone_la"
             android:id="@+id/homework"
-            android:src="@drawable/eicon2"
+            android:src="@drawable/icon2"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView

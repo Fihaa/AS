@@ -6,39 +6,29 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@color/back"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.elashry.aseer.Activities.Home"
     >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/fff"
-        android:layout_alignBottom="@+id/circle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="873dp" />
 
     <com.szugyi.circlemenu.view.CircleLayout
         android:id="@+id/circle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        app:isRotating="true"
-        app:radius="200dp"
+        app:isRotating="false"
+        app:radius="154dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="130dp">
+        android:layout_alignParentStart="true">
 
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icone_la"
             android:id="@+id/apsent"
-            android:src="@drawable/icon10"
-            />
+            android:src="@drawable/icon10"/>
 
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icone_la"
@@ -70,7 +60,7 @@
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icone_la"
             android:id="@+id/arrive"
-            android:src="@drawable/icon6"
+            android:src="@drawable/eicon6"
             />
 
         <com.szugyi.circlemenu.view.CircleImageView
@@ -103,7 +93,7 @@
         android:layout_width="200dp"
         android:textColor="#f5fafa"
         android:textStyle="bold"
-        android:textSize="35dp"
+        android:textSize="25dp"
         android:text="@string/out"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

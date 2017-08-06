@@ -1,18 +1,25 @@
 package com.example.elashry.aseer.Activities;
 
-import android.app.ProgressDialog;
+import android.app.*;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.elashry.aseer.Adapters.AdapterSchool;
@@ -27,9 +34,10 @@ import com.szugyi.circlemenu.view.CircleLayout;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
-import static com.example.elashry.aseer.Activities.Login.editor;
+import static com.example.elashry.aseer.Activities.Login.log;
 import static com.example.elashry.aseer.Activities.Select.y;
 
 public class Home extends AppCompatActivity implements CircleLayout.OnItemClickListener, CircleLayout.OnRotationFinishedListener {
@@ -37,37 +45,65 @@ public class Home extends AppCompatActivity implements CircleLayout.OnItemClickL
     private Effectstype effect;
     ProgressDialog progressDialog;
     public static  String s ,n;
-    final static String api = "http://wefakhail.org/fihaa/api/schools";
+    NotificationManager mNotificationManager;
+public  static   boolean x=true;
+
+    // final static String api = "http://wefakhail.org/fihaa/api/schools";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterSchool adapter;
     //private float angle = 90;
-
-Button out;
+    private SharedPreferences ref,idref;
+    Button out;
+    ImageView notfyy;
+   TextView notfy_txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Locale.getDefault().getLanguage().equals("en")) {
             setContentView(R.layout.econtent_home);
-
         } else {
             setContentView(R.layout.activity_home);
-
-
         }
+        notfyy=(ImageView)findViewById(R.id.notfy);
+        notfy_txt=(TextView) findViewById(R.id.notf_txt);
         circleLayout = (CircleLayout) findViewById(R.id.circle);
         circleLayout.setOnItemClickListener(this);
         Intent i = getIntent();
         s = i.getStringExtra("id");
         n = i.getStringExtra("name");
-
+        notfyy.setVisibility( View.INVISIBLE );
+      //  notfy_txt.setVisibility( View.INVISIBLE );
 
         Intent ii = getIntent();
         s = ii.getStringExtra("id");
         n = ii.getStringExtra("name");
+        if (y.equals("2")|y.equals("3")){
+            notfyy.setVisibility(View.VISIBLE);
+            if (x==true){
+            notfy_txt.setVisibility(View.VISIBLE);}
+            ClickMe();
+            notfyy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
+                        Intent i2 = new Intent(Home.this, Notification.class);
+                        startActivity(i2);
+                        notfy_txt.setVisibility(View.GONE);
+
+
+                }
+            });
+        }
+
+        if (log==true)
+        {
+
+            Intent intent = getIntent();
+            s = intent.getStringExtra("s");
+            n = intent.getStringExtra("n");   }
+       // progressDialog = new ProgressDialog(this);
+     //   progressDialog.setCancelable(false);
 
 
         //  circleLayout.setOnRotationFinishedListener(this);
@@ -77,48 +113,24 @@ Button out;
             public void onClick(View v) {
                 //  editor.remove("idName"); // will delete key key_name3
 
+                SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
+                spref.edit().clear().commit();
                 finish();
 
+                SharedPreferences usref = getSharedPreferences("loginusref",MODE_PRIVATE);
+                usref.edit().clear().commit();
+                finish();
+
+                SharedPreferences prref = getSharedPreferences("loginprref",MODE_PRIVATE);
+                prref.edit().clear().commit();
+                finish();
 
             }
         });
 
-     //   if (y.equals("2")|y.equals("3")) {
 
-
-            //  Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-
-      /*  Connector connector = new Connector();
-
-        try {
-
-            ArrayList<DataEncap> arrayList = parser.JsonProcessschool(connector.execute(api).get());
-          //  Toast.makeText(this,arrayList.toString(), Toast.LENGTH_SHORT).show();
-
-            recyclerMain();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
 
-    }
-    else {}}
-    private void recyclerMain() {
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-    adapter = new AdapterSchool(parser.getlist(), getApplicationContext(), this);
-
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
-        adapter.notifyDataSetChanged();
-
-
-    }*/
-        }
     @Override
     public boolean onSupportNavigateUp(){
         finish();
@@ -153,13 +165,51 @@ Button out;
                     showProgress(view);
                     startActivity(i2);
                 }else {
-                    Toast.makeText(this, "هذا ليس من صلاحياتك ", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(this, "هذا ليس من صلاحياتك ", Toast.LENGTH_LONG).show();
+                    if (Locale.getDefault().getLanguage().equals("en")) {
+                        try {
+                            AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                            alertDialog.setTitle("Info");
+                            alertDialog.setMessage("This not allow for you ");
+                            alertDialog.setIcon(R.mipmap.logo);
+                            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+
+                            alertDialog.show();
+                        }
+                        catch(Exception e)
+                        {
+                        }
+                    } else {
+                        try {
+                            AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                            alertDialog.setTitle("تحذير");
+                            alertDialog.setMessage("هذا ليس من صلاحياتك");
+                            alertDialog.setIcon(R.mipmap.logo);
+                            alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+
+                            alertDialog.show();
+                        }
+                        catch(Exception e)
+                        {
+                        }
+
+
+                }
                 }
                 break;
             case R.id.arrive:
                 Intent i3 =new Intent(Home.this,Arcmenu.class);
                 showProgress(view);
-
                 startActivity(i3);
 
                 break;
@@ -174,7 +224,46 @@ Button out;
                     Intent i4 =new Intent(Home.this,WebViiew.class);
                     showProgress(view);
 
-                    startActivity(i4);}else {}
+                    startActivity(i4);}else {
+                        if (Locale.getDefault().getLanguage().equals("en")) {
+                            try {
+                                AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                                alertDialog.setTitle("Info");
+                                alertDialog.setMessage("This not allow for you ");
+                                alertDialog.setIcon(R.mipmap.logo);
+                                alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                });
+
+                                alertDialog.show();
+                            }
+                            catch(Exception e)
+                            {
+                            }
+                        } else {
+                            try {
+                                AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                                alertDialog.setTitle("تحذير");
+                                alertDialog.setMessage("هذا ليس من صلاحياتك");
+                                alertDialog.setIcon(R.mipmap.logo);
+                                alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                });
+
+                                alertDialog.show();
+                            }
+                            catch(Exception e)
+                            {
+                            }
+
+                        }
+                       }
                 }
 
                 break;
@@ -190,7 +279,46 @@ Button out;
                     showProgress(view);
 
                     startActivity(i6);
-                }else {}
+                }else { if (Locale.getDefault().getLanguage().equals("en")) {
+                    try {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                        alertDialog.setTitle("Info");
+                        alertDialog.setMessage("This not allow for you ");
+                        alertDialog.setIcon(R.mipmap.logo);
+                        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        alertDialog.show();
+                    }
+                    catch(Exception e)
+                    {
+                    }
+                } else {
+                    try {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                        alertDialog.setTitle("تحذير");
+                        alertDialog.setMessage("هذا ليس من صلاحياتك");
+                        alertDialog.setIcon(R.mipmap.logo);
+                        alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+
+                            }
+                        });
+
+                        alertDialog.show();
+                    }
+                    catch(Exception e)
+                    {
+                    }
+
+                }
+                }
                 break;
             case R.id.table:
                 if (y.equals("2")|y.equals("3")) {
@@ -199,12 +327,52 @@ Button out;
                     showProgress(view);
 
                     startActivity(i7);
-                }else{}
+                }else{
+
+                    if (Locale.getDefault().getLanguage().equals("en")) {
+                        try {
+                            AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                            alertDialog.setTitle("Info");
+                            alertDialog.setMessage("This not allow for you ");
+                            alertDialog.setIcon(R.mipmap.logo);
+                            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+
+                            alertDialog.show();
+                        }
+                        catch(Exception e)
+                        {
+                        }
+                    } else {
+                        try {
+                            AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                            alertDialog.setTitle("تحذير");
+                            alertDialog.setMessage("هذا ليس من صلاحياتك");
+                            alertDialog.setIcon(R.mipmap.logo);
+                            alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+
+                                }
+                            });
+
+                            alertDialog.show();
+                        }
+                        catch(Exception e)
+                        {
+                        }
+
+                    }
+                }
                 break;
             case R.id.news:
                 Intent i8 =new Intent(Home.this,News.class);
                 showProgress(view);
-
                 startActivity(i8);
                 break;
             case R.id.homework:
@@ -214,7 +382,45 @@ Button out;
                     showProgress(view);
 
                     startActivity(i9);
-                }else {}
+                }else { if (Locale.getDefault().getLanguage().equals("en")) {
+                    try {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                        alertDialog.setTitle("Info");
+                        alertDialog.setMessage("This not allow for you ");
+                        alertDialog.setIcon(R.mipmap.logo);
+                        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        alertDialog.show();
+                    }
+                    catch(Exception e)
+                    {
+                    }
+                } else {
+                    try {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                        alertDialog.setTitle("تحذير");
+                        alertDialog.setMessage("هذا ليس من صلاحياتك");
+                        alertDialog.setIcon(R.mipmap.logo);
+                        alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        alertDialog.show();
+                    }
+                    catch(Exception e)
+                    {
+                    }
+
+                }
+                }
                 break;
         }
 //      }else if (x==true){
@@ -255,38 +461,46 @@ Button out;
 //    }
 
         } else {
-            NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(Home.this);
 
-            effect=Effectstype.Flipv;
-            dialogBuilder
-                    .withTitle("مدرسه أنوار الفيحاء")                           //.withTitle(null)  no title
-                    .withTitleColor("#FFFFFF")                                  //def
-                    .withDividerColor("#d0f5eb")                              //def
-                    .withMessage("يرجى التاكد من الاتصال بالانترنت")                     //.withMessage(null)  no Msg
-                    .withMessageColor("#FFFFFFF")                              //def  | withMessageColor(int resid)
-                    .withDialogColor("#d0f5eb")                               //def  | withDialogColor(int resid)                               //def
-                    .withIcon(getResources().getDrawable(R.drawable.logo))
-                    .isCancelableOnTouchOutside(true)                           //def    | isCancelable(true)
-                    .withDuration(700)                                          //def
-                    .withEffect(effect)                                         //def Effectstype.Slidetop
-                    .withButton1Text("موافق")                                      //def gone
-                    .withButton2Text("الغاء")                                  //def gone
-                    .setCustomView(R.layout.custom_view,Home.this)         //.setCustomView(View or ResId,context)
-                    .setButton1Click(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            finish();
+            if (Locale.getDefault().getLanguage().equals("en")) {
+                try {
+                    AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+
+                    alertDialog.setTitle("Info");
+                    alertDialog.setMessage("Internet not available, Cross check your internet connectivity and try again");
+                    alertDialog.setIcon(R.mipmap.logo);
+                    alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+
                         }
-                    })
-                    .setButton2Click(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            finish();                        }
-                    })
-                    .show();
+                    });
 
-        }
-    }
+                    alertDialog.show();
+                }
+                catch(Exception e)
+                {
+                }
+            } else {
+                try {
+                    AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+                    alertDialog.setTitle("تحذير");
+                    alertDialog.setMessage("انترنت غير متاح حاليا من فضلك تحقق من الاتصال بالانترنت وحاول مره اخري");
+                    alertDialog.setIcon(R.mipmap.logo);
+                    alertDialog.setButton("موافق", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    alertDialog.show();
+                }
+                catch(Exception e)
+                {
+                }
+
+            }
+
+    }}
 
     @Override
     public void onRotationFinished(View view) {
@@ -351,4 +565,65 @@ Button out;
             }
         }, THREE_SECONDS);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this,Select.class);
+        startActivity(i);
+        super.onBackPressed();
+        x=false;
+    }
+
+
+    private void ClickMe() {
+        //To set large icon in notification
+        Bitmap icon1 = BitmapFactory.decodeResource(getResources(),
+                R.drawable.notify);
+
+        //Assign BigText style notification
+        NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
+        bigText.bigText("تحقق من الرسوم هناك تغيير ف الامور الماليه الخاصه بك");
+        bigText.setBigContentTitle("رساله تذكريه");
+        bigText.setSummaryText("بواسطه: الادراه");
+
+        //build notification
+        NotificationCompat.Builder mBuilder =
+                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.notify)
+                        .setContentTitle("رساله تذكريه")
+                        .setContentText("الرسوم المدرسيه")
+                        .setLargeIcon(icon1)
+                        .setStyle(bigText);
+
+
+
+
+        Intent resultIntent = new Intent(this, Notification.class);
+
+        TaskStackBuilder stackBuilder =TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(Notification.class);
+
+        stackBuilder.addNextIntent(resultIntent);
+// Gets a PendingIntent containing the entire back stack
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setContentIntent(resultPendingIntent);
+
+        mBuilder.addAction(R.drawable.readme,"قراءه المزيد" ,resultPendingIntent);
+        mBuilder.setAutoCancel(true);
+
+
+        // Gets an instance of the NotificationManager service
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+         //NotificationManager mNotificationManager.cancellAll();
+
+        //to post your notification to the notification bar
+        mNotificationManager.notify(0, mBuilder.build());
+    }
+
+
+
 }

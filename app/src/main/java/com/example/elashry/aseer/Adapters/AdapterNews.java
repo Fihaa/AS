@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.elashry.aseer.Activities.Detail;
 import com.example.elashry.aseer.Activities.News;
@@ -16,8 +17,10 @@ import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.DataEncap;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class AdapterNews extends RecyclerView.Adapter<AdapterNews.ViewHolder> implements View.OnClickListener {
@@ -25,7 +28,7 @@ public class AdapterNews extends RecyclerView.Adapter<AdapterNews.ViewHolder> im
     ArrayList<DataEncap> arrayList;
     Context context;
     News news;
-
+public static String img;
     DataEncap encap = new DataEncap();
 
     public AdapterNews(ArrayList<DataEncap> arrayList, Context context, News news) {
@@ -58,12 +61,17 @@ public class AdapterNews extends RecyclerView.Adapter<AdapterNews.ViewHolder> im
 
         holder.textTitle.setText(encap.getTitle());
         holder.textDesc.setText(encap.getDesc());
-        Picasso.with(context).load(encap.getImg()).into(holder.imageNews);
-
-        String v = encap.getDate();
+        holder.date.setText(encap.getDate()+"");
+        Picasso.with(context).load("http://wefakhail.org/fihaa/uploads/thumbs/"+encap.getImg()).into(holder.imageNews);
+//        Date date = new Date(encap.getDate());
+//        DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(news);
+//        holder.date.setText( dateFormat.format(date));
+        /*String v = encap.getDate();
         Long v2 = Long.parseLong(v);
         String dateFormat = new SimpleDateFormat("dd /MM/yyyy").format(v2);
-        holder.date.setText(dateFormat);
+        holder.date.setText(dateFormat);*/
+
+img =encap.getImg();
 
     }
 
@@ -106,13 +114,13 @@ public class AdapterNews extends RecyclerView.Adapter<AdapterNews.ViewHolder> im
 
             Intent intent = new Intent(news, Detail.class);
 
-            String v = encap.getDate();
-            Long v2 = Long.parseLong(v);
-            String dateFormat = new SimpleDateFormat("dd /MM/yyyy").format(v2);
+//            String v = encap.getDate();
+//            Long v2 = Long.parseLong(v);
+//            String dateFormat = new SimpleDateFormat("dd /MM/yyyy").format(v2);
 
             intent.putExtra("title", encap.getTitle());
             intent.putExtra("desc", encap.getDesc());
-            intent.putExtra("date", dateFormat);
+            intent.putExtra("date", encap.getDate());
             intent.putExtra("image", encap.getImg());
 
             news.startActivity(intent);

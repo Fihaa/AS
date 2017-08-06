@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">أنوار الفيحاء</string>
+    <string name="date">التاريخ</string>
     <string name="item_1">رياضى</string>
     <string name="item_2">ثقافى</string>
     <string name="item_3">ترفيهى</string>
@@ -91,4 +92,7 @@
     <string name="rsomtirm2">الفصل الدراسي الثاني</string>
     <string name="activity_payschool"> الوصول للمدرسه</string>
     <string name="title_activity_web_viiew">الرسوم المدرسية</string>
+    <string name="last">سابقا</string>
+    <string name="Visitor">زائر</string>
+
 </resources>
