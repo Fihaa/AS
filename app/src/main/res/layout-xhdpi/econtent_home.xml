@@ -98,8 +98,38 @@
         android:textSize="25dp"
         android:text="@string/out"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="15dp"/>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/not_container"
+        android:visibility="visible"
+        >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:src="@drawable/not"
+            android:id="@+id/notfy"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/notf_txt"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|right"
+            android:background="@color/back"
+            android:text="1"
+            android:gravity="center"
+            android:textColor="@color/background_color"
+            android:textSize="8sp"
+            />
+    </FrameLayout>
     <!--<ImageView-->
     <!--android:layout_width="45dp"-->
     <!--android:layout_height="45dp"-->
