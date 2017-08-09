@@ -67,7 +67,7 @@ public class PaySchool extends AppCompatActivity {
        // scp.add( ii.getStringExtra("i3"));
         scp.add( ii.getStringExtra("i4"));
         scp.add( ii.getStringExtra("i5"));
-       // scp.add( ii.getStringExtra("i6"));
+       scp.add( ii.getStringExtra("i6"));
 //        Toast.makeText(this, idsc +"", Toast.LENGTH_SHORT).show();
      //   Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
@@ -118,6 +118,19 @@ public class PaySchool extends AppCompatActivity {
             x=false;
         }
 
+        else if (scp.contains(idsc.get(9))) {
+            name.setText(namesc.get(9));
+//            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
+            //      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+            phone.setText(phonesc.get(9));
+            address.setText(addresssc.get(9));
+            email.setText(emailsc.get(9));
+            fax.setText(faxsc.get(9));
+            slatitude=latitude.get(9);
+            slongitude=longitude.get(9);
+            x=false;
+        }
 //        phone.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

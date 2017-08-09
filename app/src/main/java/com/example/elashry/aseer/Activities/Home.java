@@ -18,11 +18,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.elashry.aseer.Adapters.AdapterSchool;
+import com.example.elashry.aseer.Models.Image;
 import com.example.elashry.aseer.R;
 import com.example.elashry.aseer.dataProccess.Connector;
 import com.example.elashry.aseer.dataProccess.DataEncap;
@@ -54,7 +56,7 @@ public  static   boolean x=true;
     private AdapterSchool adapter;
     //private float angle = 90;
     private SharedPreferences ref,idref;
-    Button out;
+    ImageView out,copy;
     ImageView notfyy;
    TextView notfy_txt;
     @Override
@@ -107,7 +109,16 @@ public  static   boolean x=true;
 
 
         //  circleLayout.setOnRotationFinishedListener(this);
-        out = (Button) findViewById(R.id.btn_out);
+        copy = (ImageView) findViewById(R.id.btn_copy);
+        out = (ImageView) findViewById(R.id.btn_out);
+
+        copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(Home.this,Copy.class);
+                startActivity(i);
+            }
+        });
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,8 +132,8 @@ public  static   boolean x=true;
                 usref.edit().clear().commit();
                 finish();
 
-                SharedPreferences prref = getSharedPreferences("loginprref",MODE_PRIVATE);
-                prref.edit().clear().commit();
+                SharedPreferences pref = getSharedPreferences("loginpref",MODE_PRIVATE);
+                pref.edit().clear().commit();
                 finish();
 
             }

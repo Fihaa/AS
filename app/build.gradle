@@ -22,8 +22,8 @@ android {
     }
 
 }
-android{
-    defaultConfig.applicationId="com.example.elashry.aseer"
+android {
+    defaultConfig.applicationId = "com.example.elashry.aseer"
 }
 
 dependencies {

@@ -42,8 +42,9 @@ public static String i1,i2,i3,i11,i22,i33;;
         setContentView(R.layout.activity_arc_menu);
         item1=(ImageView)findViewById(R.id.fab_arc_menu_1) ;
 
-        item11=(ImageView)findViewById(R.id.fab_arc_menu_11) ;
-        item22=(ImageView)findViewById(R.id.fab_arc_menu_22) ;
+        item11=(ImageView)findViewById(R.id.fab_arc_menu_2) ;
+        item22=(ImageView)findViewById(R.id.fab_arc_menu_3) ;
+        item33=(ImageView)findViewById(R.id.fab_arc_menu_4) ;
 
         arcMenuAndroid = (com.sa90.materialarcmenu.ArcMenu) findViewById(R.id.arcmenu_android_example_layout);
         arcMenuAndroid.setStateChangeListener(new StateChangeListener() {
@@ -90,6 +91,18 @@ public static String i1,i2,i3,i11,i22,i33;;
 
                     }
                 });
+                item33.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        i3="18";
+                        Intent i1 =new Intent(Arcmenu.this,PaySchool.class);
+                        i1.putExtra("i5",i3);
+                        startActivity(i1);
+                        x=true;
+
+                    }
+                });
+
 
             }
 

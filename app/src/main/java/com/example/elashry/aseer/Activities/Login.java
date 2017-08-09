@@ -85,8 +85,8 @@ EditText edt1,edtn , edtpass;
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
 
-                Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
                 intent.putExtra("s",spref.getString("student_id","")) ;
                 intent.putExtra("n",spref.getString("student_name",""));
                 startActivity(intent);
@@ -121,21 +121,21 @@ EditText edt1,edtn , edtpass;
             edt1.setVisibility(View.GONE);
             edtn.setVisibility(View.VISIBLE);
 
-        }else{
+        }else if (y.equals("3")){
             edtpass.setVisibility(View.GONE);
             view.setVisibility(View.GONE);
             edt1.setVisibility(View.GONE);
             edtn.setVisibility(View.VISIBLE);
-            loginparentpref = getSharedPreferences("loginprref",MODE_PRIVATE);
-            boolean save_parent_data = loginparentpref.getBoolean("save_parent",false);
-            if (save_parent_data==true)
+            loginuserpref = getSharedPreferences("loginprref",MODE_PRIVATE);
+            boolean save_user_data = loginuserpref.getBoolean("save_user",false);
+            if (save_user_data==true)
             {
                 Intent intent = new Intent(Login.this, Home.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                SharedPreferences spref = getSharedPreferences("loginspref",MODE_PRIVATE);
+                SharedPreferences spref = getSharedPreferences("loginprref",MODE_PRIVATE);
 
-                //Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
-                // Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, spref.getString("student_id",""), Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(this, spref.getString("student_name",""), Toast.LENGTH_SHORT).show();
                 intent.putExtra("s",spref.getString("student_id","")) ;
                 intent.putExtra("n",spref.getString("student_name",""));
                 startActivity(intent);
@@ -143,8 +143,7 @@ EditText edt1,edtn , edtpass;
 
             }
 
-            prref = getSharedPreferences("SaveParentData",MODE_PRIVATE);
-
+            usref = getSharedPreferences("SaveUserData",MODE_PRIVATE);
         }
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -188,7 +187,7 @@ EditText edt1,edtn , edtpass;
                                         }
                                         if (list.size()>0)
                                         {
-String x=object.get("student_id_pk").toString();
+                                            String x=object.get("student_id_pk").toString();
                                             // MY_PREFS_NAME - a static String variable like:
                                             createShared("loginspref",x,object.get("student_name").toString());
                                             Intent i=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -243,15 +242,8 @@ String x=object.get("student_id_pk").toString();
                                         }
                                         if (list.size()>0)
                                         {
-                                            createparentShared("loginprref",object.get("parent_identity").toString());
-                                            Intent ii=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);                                                                        ii.putExtra("name",object.get("student_name").toString());
-                                            ii.putExtra("id",object.get("student_id_pk").toString());
-                                            startActivity(ii);
-                                            log=false;
-//                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
-                                        //    Toast.makeText(Login.this, "mohhhh", Toast.LENGTH_SHORT).show();
-                                            createShared("loginspref",object.get("student_id").toString(),object.get("student_name").toString());
 
+                                           // Toast.makeText(Login.this, "mohhhh", Toast.LENGTH_SHORT).show();
 
                                             //   Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
                                           //  Toast.makeText(Login.this,object.get("student_national_id").toString() , Toast.LENGTH_SHORT).show();
@@ -268,16 +260,18 @@ String x=object.get("student_id_pk").toString();
                                                                     object = response.getJSONObject(index);
 
                                                                     if (sid.equals(object.get("student_id_pk").toString())){
-                                                                        school=object.get("school_id_fk").toString();
+                                                                    //    school=object.get("school_id_fk").toString();
+                                                                     //   Toast.makeText(Login.this, "111", Toast.LENGTH_SHORT).show();
 
-                                                                       /* createparentShared("loginprref",object.get("parent_identity").toString());
+                                                                      //  createShared("loginspref",object.get("student_id_pk").toString(),object.get("student_name").toString());
+                                                                       // createparentShared("loginprref",object.get("parent_identity").toString());
                                                                         Intent ii=new Intent(Login.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);                                                                        ii.putExtra("name",object.get("student_name").toString());
                                                                         ii.putExtra("id",object.get("student_id_pk").toString());
-//                                            Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
-                                                                        showProgress(view);
-                                                                        startActivity(ii);*/
-//                                                                        Toast.makeText(Login.this,object.get("student_name").toString() , Toast.LENGTH_SHORT).show();
-                                                                    }
+                                                                        startActivity(ii);
+                                                                        log=false;
+                                                                    //    Toast.makeText(Login.this, "mohhhh", Toast.LENGTH_SHORT).show();
+
+                                                                        }
                                                                 }
                                                             } catch (JSONException e) {
                                                                 e.printStackTrace();

@@ -86,10 +86,10 @@
         <activity
             android:name=".Activities.Anshta"
             android:label="@string/activity_anshta" />
-
-
         <activity android:name=".Activities.Tafasel" />
-        <activity android:name=".Activities.Arcmenu"  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Activities.Arcmenu"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.WebViiew"
             android:label="@string/title_activity_web_viiew" />
@@ -97,7 +97,8 @@
         <activity
             android:name=".Activities.MyIntro"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.PaySchool"
+        <activity
+            android:name=".Activities.PaySchool"
             android:label="@string/activity_payschool" />
         <activity
             android:name=".Activities.nafic"
@@ -105,9 +106,8 @@
         <activity
             android:name=".Activities.TargetActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activities.Notification"
-           />
+        <activity android:name=".Activities.Notification" />
+        <activity android:name=".Activities.Copy"></activity>
     </application>
 
 </manifest>

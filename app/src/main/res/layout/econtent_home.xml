@@ -88,18 +88,22 @@
 
     </com.szugyi.circlemenu.view.CircleLayout>
 
-    <Button
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_height="70dp"
         android:id="@+id/btn_out"
-        android:backgroundTint="#1b7c75"
-        android:layout_width="200dp"
-        android:textColor="#f5fafa"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:text="@string/out"
+        android:layout_width="70dp"
+        android:src="@drawable/out"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="15dp"/>
+    <ImageView
+        android:layout_height="70dp"
+        android:id="@+id/btn_copy"
+        android:layout_width="70dp"
+        android:src="@drawable/co"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/not_container"
+        android:layout_centerHorizontal="true" />
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

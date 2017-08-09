@@ -48,9 +48,6 @@
                 />
 
 
-
-
-
         </com.sa90.materialarcmenu.ArcMenu>
 
         <com.sa90.materialarcmenu.ArcMenu
@@ -59,24 +56,29 @@
             android:layout_height="150px"
             app:menu_scr="@drawable/boy"
             app:menu_open="arc_right"
-            app:menu_radius="100dp"
+            app:menu_radius="120dp"
             app:menu_color="#f5f9f8"
 
 
             >
 
             <ImageView
-                android:id="@+id/fab_arc_menu_11"
+                android:id="@+id/fab_arc_menu_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/item1"
                 />
 
             <ImageView
-                android:id="@+id/fab_arc_menu_22"
+                android:id="@+id/fab_arc_menu_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/iend2"/>
+                android:src="@drawable/item2"/>
+            <ImageView
+                android:id="@+id/fab_arc_menu_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/item3"/>
 
 
 
