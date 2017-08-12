@@ -9,10 +9,6 @@ import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.model.ConfigSplash;
 
 
-/**
- * Created by Aya_Moh on 7/1/2017.
- */
-
 public class Splach extends AwesomeSplash {
 
     //DO NOT OVERRIDE onCreate()!

@@ -56,9 +56,9 @@ public  static   boolean x=true;
     private AdapterSchool adapter;
     //private float angle = 90;
     private SharedPreferences ref,idref;
-    ImageView out,copy;
+    ImageView out,copy,pay;
     ImageView notfyy;
-   TextView notfy_txt;
+   TextView notfy_txt,tpay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +67,8 @@ public  static   boolean x=true;
         } else {
             setContentView(R.layout.activity_home);
         }
+        pay= (ImageView) findViewById(R.id.pay);
+        tpay= (TextView) findViewById(R.id.rs);
         notfyy=(ImageView)findViewById(R.id.notfy);
         notfy_txt=(TextView) findViewById(R.id.notf_txt);
         circleLayout = (CircleLayout) findViewById(R.id.circle);
@@ -75,7 +77,8 @@ public  static   boolean x=true;
         s = i.getStringExtra("id");
         n = i.getStringExtra("name");
         notfyy.setVisibility( View.INVISIBLE );
-      //  notfy_txt.setVisibility( View.INVISIBLE );
+        pay.setVisibility( View.INVISIBLE );
+        tpay.setVisibility(View.INVISIBLE);
 
         Intent ii = getIntent();
         s = ii.getStringExtra("id");
@@ -94,6 +97,16 @@ public  static   boolean x=true;
                         notfy_txt.setVisibility(View.GONE);
 
 
+                }
+            });
+        }else if (y.equals("4")){
+            pay.setVisibility( View.VISIBLE );
+            tpay.setVisibility(View.VISIBLE);
+            pay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(Home.this, Arcmenu.class);
+                    startActivity(i);
                 }
             });
         }

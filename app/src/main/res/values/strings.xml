@@ -101,6 +101,9 @@
     <string name="last">last</string>
     <string name="date">date</string>
     <string name="Visitor">Visitor</string>
+    <string name="total">Total</string>
+    <string name="rsoom">payset</string>
+    <string name="about">about </string>
 
 </resources>
 

@@ -19,19 +19,25 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.elashry.aseer.Activities.Home.n;
+import static com.example.elashry.aseer.dataProccess.JsonParser.firstpaid;
+import static com.example.elashry.aseer.dataProccess.JsonParser.firstpay;
+import static com.example.elashry.aseer.dataProccess.JsonParser.secondpaid;
+import static com.example.elashry.aseer.dataProccess.JsonParser.secondpay;
 
 public class Rsoom extends AppCompatActivity {
     final static String api = "http://wefakhail.org/fihaa/api/payment";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterPayment adapter;
-    TextView t;
+    TextView t ,pay,paid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rsoom);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         t= (TextView) findViewById(R.id.name);
+        pay= (TextView) findViewById(R.id.tpay);
+        paid= (TextView) findViewById(R.id.tpaid);
         t.setText(n);
 
 
@@ -48,6 +54,9 @@ public class Rsoom extends AppCompatActivity {
         try {
 
             ArrayList<DataModel> arrayList = parser.JsonProcesspay(connector.execute(api).get());
+            pay.setText(firstpay +secondpay+"");
+            paid.setText(firstpaid+secondpaid+"");
+
             recyclerMain();
         } catch (InterruptedException e) {
             e.printStackTrace();

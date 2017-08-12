@@ -92,7 +92,11 @@
     <string name="rsomtirm2">الفصل الدراسي الثاني</string>
     <string name="activity_payschool"> الوصول للمدرسه</string>
     <string name="title_activity_web_viiew">الرسوم المدرسية</string>
-    <string name="last">سابقا</string>
+    <string name="last">المتأخرات السابقه</string>
     <string name="Visitor">زائر</string>
+    <string name="total">الاجمالي</string>
+    <string name="rsoom">الرسوم المدرسيه</string>
+    <string name="about">عن الشركه</string>
+
 
 </resources>
