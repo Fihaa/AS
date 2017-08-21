@@ -24,7 +24,7 @@ import static com.example.elashry.aseer.dataProccess.DataEncap.attstatue;
 import static com.example.elashry.aseer.dataProccess.JsonParser.state;
 
 public class Notification extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/invoices";
+    final static String api = "http://anwaralfyaha.com/api/invoices";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterNotify adapter;

@@ -68,11 +68,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="@string/amount"
+            android:text="@string/last"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -106,11 +106,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="@string/paid"
+            android:text="@string/residual"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -121,6 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="#1ac798" />
+<!--
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -179,11 +180,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="@string/amount"
+            android:text="@string/last"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -218,11 +219,11 @@
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
-            android:text="@string/paid"
+            android:text="@string/residual"
             android:textColor="#04664c"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -293,7 +294,7 @@
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
@@ -331,7 +332,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="#bde6db"
             android:gravity="center"
             android:padding="20dip"
@@ -346,6 +347,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="#1ac798" />
+-->
 
     <LinearLayout
         android:layout_width="match_parent"

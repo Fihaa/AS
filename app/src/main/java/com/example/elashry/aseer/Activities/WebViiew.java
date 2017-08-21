@@ -17,7 +17,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.elashry.aseer.R;
 
 public class WebViiew extends AppCompatActivity {
-    private String postUrl = "http://wefakhail.org/fihaa/";
+    private String postUrl = "http://anwaralfyaha.com";
     private WebView webView;
     private ProgressBar progressBar;
     private ImageView imgHeader;

@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutionException;
 
 
 public class News extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/news";
+    final static String api = "http://anwaralfyaha.com/api/news";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterNews adapter;

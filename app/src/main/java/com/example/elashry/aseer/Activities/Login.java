@@ -40,9 +40,9 @@ import static com.example.elashry.aseer.Activities.Select.y;
 
 
 public class Login extends AppCompatActivity {
-    private final String student_url ="http://wefakhail.org/fihaa/api/students";
-    private final String user_url ="http://wefakhail.org/fihaa/api/users";
-    private final String parents_url ="http://wefakhail.org/fihaa/api/parents";
+    private final String student_url ="http://anwaralfyaha.com/api/students";
+    private final String user_url ="http://anwaralfyaha.com/api/users";
+    private final String parents_url ="http://anwaralfyaha.com/api/parents";
 
     private Effectstype effect;
     Button b1;

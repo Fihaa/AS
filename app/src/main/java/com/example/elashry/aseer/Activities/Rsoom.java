@@ -25,7 +25,7 @@ import static com.example.elashry.aseer.dataProccess.JsonParser.secondpaid;
 import static com.example.elashry.aseer.dataProccess.JsonParser.secondpay;
 
 public class Rsoom extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/payment";
+    final static String api = "http://anwaralfyaha.com/api/payment";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterPayment adapter;

@@ -137,7 +137,7 @@
                 android:background="#bde6db"
                 android:gravity="center"
                 android:padding="20dip"
-                android:text="@string/paid"
+                android:text="@string/residual"
                 android:textColor="#04664c"
                 android:textSize="25dp"
                 android:textStyle="bold" />

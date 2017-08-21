@@ -19,7 +19,7 @@ import android.os.Bundle;
 import com.example.elashry.aseer.R;
 
 public class Works extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/homework";
+    final static String api = "http://anwaralfyaha.com/api/homework";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterWork adapter;

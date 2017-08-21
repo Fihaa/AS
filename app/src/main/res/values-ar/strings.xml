@@ -51,7 +51,10 @@
     <string name="closebutton">زر إغلاق للنشاط</string>
     <string name="back">رجوع</string>
     <string name="internet">جارى التحميل ..</string>
-    <string name="amount">المبلغ</string>
+    <string name="late">الرسوم المتأخره</string>
+
+
+
     <string name="title_activity_maps">الخريطة</string>
     <string name="title_activity_home">الصفحة الرئيسيه</string>
     <string name="out">تسجيل الخروج</string>
@@ -97,6 +100,7 @@
     <string name="total">الاجمالي</string>
     <string name="rsoom">الرسوم المدرسيه</string>
     <string name="about">عن الشركه</string>
+    <string name="amount">اجمالي الرسوم</string>
 
 
 </resources>

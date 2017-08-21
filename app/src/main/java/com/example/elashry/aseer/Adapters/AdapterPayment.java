@@ -62,11 +62,11 @@ public void onBindViewHolder(AdapterPayment.ViewHolder holder, int position) {
 
         holder.oldleft.setText(model.getOld_left());
         holder.oldpaid.setText(model.getOld_left_paid());
-        holder.firstpay.setText(model.getFirst_class_payment());
-        holder.firstpaid.setText(model.getFirst_class_paid());
+//        holder.firstpay.setText(model.getFirst_class_payment());
+//        holder.firstpaid.setText(model.getFirst_class_paid());
         holder.firsttrans.setText(model.getFirst_transport());
-        holder.secondpay.setText(model.getSecond_class_payment());
-        holder.secondpaid.setText(model.getSecond_class_paid());
+//        holder.secondpay.setText(model.getSecond_class_payment());
+//        holder.secondpaid.setText(model.getSecond_class_paid());
         holder.secondtrans.setText(model.getSecond_transport());
         }
 
@@ -96,11 +96,11 @@ class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 
         oldleft = (TextView) layout.findViewById(R.id.oldleft);
         oldpaid = (TextView) layout.findViewById(R.id.oldleftpaid);
-        firstpay= (TextView) layout.findViewById(R.id.firstpay);
-        firstpaid = (TextView) layout.findViewById(R.id.firstpaid);
+     //   firstpay= (TextView) layout.findViewById(R.id.firstpay);
+       // firstpaid = (TextView) layout.findViewById(R.id.firstpaid);
         firsttrans = (TextView) layout.findViewById(R.id.trans);
-        secondpay = (TextView) layout.findViewById(R.id.secondpay);
-        secondpaid = (TextView) layout.findViewById(R.id.secondpaid);
+       // secondpay = (TextView) layout.findViewById(R.id.secondpay);
+       // secondpaid = (TextView) layout.findViewById(R.id.secondpaid);
         secondtrans = (TextView) layout.findViewById(R.id.secondtrans);
 
     }

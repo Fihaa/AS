@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 
 
 public class Sharf extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/ownerboard";
+    final static String api = "http://anwaralfyaha.com/api/ownerboard";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterSharf adapter;
@@ -36,7 +36,6 @@ public class Sharf extends AppCompatActivity {
         Connector connector = new Connector();
 
         try {
-
             ArrayList<DataModel> arrayList = parser.JsonProcessSharf(connector.execute(api).get());
             recyclerMain();
         } catch (InterruptedException e) {
@@ -57,7 +56,6 @@ public class Sharf extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         adapter.notifyDataSetChanged();
-
 
     }
     @Override

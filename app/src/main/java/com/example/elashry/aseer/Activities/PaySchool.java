@@ -31,7 +31,7 @@ import static com.example.elashry.aseer.dataProccess.JsonParser.amount;
 
 
 public class PaySchool extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/schoolpayment";
+    final static String api = "http://anwaralfyaha.com/api/schoolpayment";
    // final static String apiS = "http://wefakhail.org/fihaa/api/schools";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;

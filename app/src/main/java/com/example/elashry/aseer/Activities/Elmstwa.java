@@ -23,7 +23,7 @@ import static com.example.elashry.aseer.Activities.Home.n;
 
 
 public class Elmstwa extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/exams";
+    final static String api = "http://anwaralfyaha.com/api/exams";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterExam adapter;

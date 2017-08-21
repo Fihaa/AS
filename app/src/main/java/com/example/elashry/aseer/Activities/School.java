@@ -25,7 +25,7 @@ import java.util.concurrent.ExecutionException;
 
 
 public class School extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/schools";
+    final static String api = "http://anwaralfyaha.com/api/schools";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterSchool adapter;

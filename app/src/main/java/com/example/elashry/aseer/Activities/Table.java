@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class Table extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/timetable";
+    final static String api = "http://anwaralfyaha.com/api/timetable";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterTable adapter;

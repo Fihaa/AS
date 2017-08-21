@@ -22,7 +22,7 @@ import static com.example.elashry.aseer.dataProccess.DataEncap.attstatue;
 import static com.example.elashry.aseer.dataProccess.JsonParser.state;
 
 public class ghyaab extends AppCompatActivity {
-    final static String api = "http://wefakhail.org/fihaa/api/attendance";
+    final static String api = "http://anwaralfyaha.com/api/attendance";
     JsonParser parser = new JsonParser();
     private RecyclerView recyclerView;
     private AdapterAbsent adapter;
