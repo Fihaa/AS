@@ -52,6 +52,8 @@
     <string name="up_degree">state </string>
     <string name="down_degree">Down Degree</string>
     <string name="time">Time</string>
+    <string name="late">late fees</string>
+
     <string name="sunday">Sunday</string>
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -103,7 +105,7 @@
     <string name="Visitor">Visitor</string>
     <string name="total">Total</string>
     <string name="rsoom">payset</string>
-    <string name="about">about </string>
+    <string name="about">design </string>
 
 </resources>
 

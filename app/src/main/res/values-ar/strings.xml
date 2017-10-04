@@ -86,7 +86,6 @@
     <string name="bottomsheet"></string>
     <string name="no_internet">لايوجد انترنت</string>
     <string name="snapchat">سناب شات</string>
-    <string name="title_activity_main2"></string>
     <string name="youtube">يوتيوب</string>
     <string name="bus">اشتراك الحافله</string>
     <string name="allamunt">اجمالي الرسوم</string>
@@ -99,7 +98,7 @@
     <string name="Visitor">زائر</string>
     <string name="total">الاجمالي</string>
     <string name="rsoom">الرسوم المدرسيه</string>
-    <string name="about">عن الشركه</string>
+    <string name="about">التصميم</string>
     <string name="amount">اجمالي الرسوم</string>
 
 

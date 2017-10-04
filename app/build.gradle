@@ -7,11 +7,11 @@ android {
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
     defaultConfig {
-        applicationId "com.example.elashry.aseer"
+        applicationId "com.alatheer.anwaralfyaha"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,10 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    lintOptions {
+        disable 'MissingTranslation'
+    }
 }
 android {
-    defaultConfig.applicationId = "com.example.elashry.aseer"
+    defaultConfig.applicationId = "com.alatheer.anwaralfyaha"
 }
 
 dependencies {
