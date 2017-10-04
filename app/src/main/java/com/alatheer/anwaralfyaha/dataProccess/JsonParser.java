@@ -153,7 +153,7 @@ public class JsonParser {
                    DataEncap enca = new DataEncap(
                            mainObjectArray.getString(KeyTags.school_id),  mainObjectArray.getString(KeyTags.school_name),mainObjectArray.getString(KeyTags.school_adress), mainObjectArray.getString(KeyTags.school_email),mainObjectArray.getString(KeyTags.school_fax), mainObjectArray.getString(KeyTags.school_phone),mainObjectArray.getString(KeyTags.school_type), mainObjectArray.getString(KeyTags.school_latitude),mainObjectArray.getString(KeyTags.school_longitude));
                     data.add(enca);
-                      idsc.add(mainObjectArray.getString(KeyTags.school_id));
+                  idsc.add(mainObjectArray.getString(KeyTags.school_id));
                   namesc.add(mainObjectArray.getString(KeyTags.school_name));
                   phonesc.add(mainObjectArray.getString(KeyTags.school_phone));
                   emailsc.add(mainObjectArray.getString(KeyTags.school_email));

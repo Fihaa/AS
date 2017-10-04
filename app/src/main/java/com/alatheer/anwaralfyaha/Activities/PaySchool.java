@@ -123,7 +123,7 @@ public class PaySchool extends AppCompatActivity {
             name.setText(namesc.get(4));
 //            Toast.makeText(this, scp +"", Toast.LENGTH_SHORT).show();
 //            Toast.makeText(this, idsc.get(3) +"", Toast.LENGTH_SHORT).show();
-            //      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
+//      Toast.makeText(this, namesc, Toast.LENGTH_SHORT).show();
             phone.setText(phonesc.get(4));
             address.setText(addresssc.get(4));
             email.setText(emailsc.get(4));
@@ -180,8 +180,6 @@ public class PaySchool extends AppCompatActivity {
 
             t1.setText( (amount/2)+"");
             t2.setText( (amount/2)+"");
-
-
             recyclerMain();
 
         } catch (InterruptedException e) {
